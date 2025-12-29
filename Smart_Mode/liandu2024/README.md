@@ -4,20 +4,17 @@
 
 > 🤖 **自动分析报告** | Auto-generated Report
 
-> 本目录包含 **3** 个主要配置文件。
-
 ## ⚔️ 配置横向对比 (Comparison)
 
-| 特性 / 文件 | 大小 (Size) | `clash-all-fallback-smart.yaml` | `clash-all-smart.yaml` | `clash-fallback-smart-std.yaml` |
-| :--- | :--- | :--- | :--- | :--- |
-| **文件大小** | - | 19.9 KB | 16.7 KB | 19.4 KB |
-| **混合端口** | - | 7893 | 7893 | 7893 |
-| **运行模式** | - | rule | rule | rule |
-| **TUN 模式** | - | ✅ 开启 | ✅ 开启 | ✅ 开启 |
-| **IPv6** | - | 🚫 | ✅ | 🚫 |
-| **允许局域网** | - | ✅ | ✅ | ✅ |
-| **策略组数量** | - | **57** | **38** | **36** |
-| **规则条数** | - | **48** | **43** | **42** |
+| 特性 / 文件 | `clash-all-fallback-smart.yaml` | `clash-all-smart.yaml` | `clash-fallback-smart-std.yaml` |
+| :--- | :--- | :--- | :--- |
+| **文件大小** | 19.9 KB | 16.7 KB | 19.4 KB |
+| **混合端口** | 7893 | 7893 | 7893 |
+| **控制面板** | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 |
+| **运行模式** | rule | rule | rule |
+| **TUN 模式** | ✅ 开启 | ✅ 开启 | ✅ 开启 |
+| **策略组数** | **57** | **38** | **36** |
+| **规则条数** | **48** | **43** | **42** |
 
 
 ## 📄 配置文件详解 (Details)
@@ -25,6 +22,17 @@
 ### 📝 clash-all-fallback-smart.yaml
 - **大小**: 19.9 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/liandu2024/clash-all-fallback-smart.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 0.0.0.0:9090 | 控制面板 |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (57个)</b></summary>
@@ -50,7 +58,6 @@
 
 </details>
 
-
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
 
@@ -66,6 +73,17 @@
 ### 📝 clash-all-smart.yaml
 - **大小**: 16.7 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/liandu2024/clash-all-smart.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 0.0.0.0:9090 | 控制面板 |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (38个)</b></summary>
@@ -91,7 +109,6 @@
 
 </details>
 
-
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
 
@@ -107,6 +124,17 @@
 ### 📝 clash-fallback-smart-std.yaml
 - **大小**: 19.4 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/liandu2024/clash-fallback-smart-std.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 0.0.0.0:9090 | 控制面板 |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (36个)</b></summary>
@@ -131,7 +159,6 @@
 | ... | 还有 21 个 |
 
 </details>
-
 
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>

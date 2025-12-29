@@ -4,20 +4,17 @@
 
 > 🤖 **自动分析报告** | Auto-generated Report
 
-> 本目录包含 **3** 个主要配置文件。
-
 ## ⚔️ 配置横向对比 (Comparison)
 
-| 特性 / 文件 | 大小 (Size) | `MihomoSmartAIO.yaml` | `MihomoSmartProMax.yaml` | `MihomoSmartProPlus.yaml` |
-| :--- | :--- | :--- | :--- | :--- |
-| **文件大小** | - | 32.1 KB | 25.2 KB | 25.7 KB |
-| **混合端口** | - | 7893 | 7893 | 7893 |
-| **运行模式** | - | rule | rule | rule |
-| **TUN 模式** | - | 🚫 关闭 | 🚫 关闭 | 🚫 关闭 |
-| **IPv6** | - | ✅ | ✅ | ✅ |
-| **允许局域网** | - | ✅ | ✅ | ✅ |
-| **策略组数量** | - | **69** | **41** | **41** |
-| **规则条数** | - | **52** | **45** | **44** |
+| 特性 / 文件 | `MihomoSmartAIO.yaml` | `MihomoSmartProMax.yaml` | `MihomoSmartProPlus.yaml` |
+| :--- | :--- | :--- | :--- |
+| **文件大小** | 32.1 KB | 25.2 KB | 25.7 KB |
+| **混合端口** | 7893 | 7893 | 7893 |
+| **控制面板** | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 |
+| **运行模式** | rule | rule | rule |
+| **TUN 模式** | 🚫 关闭 | 🚫 关闭 | 🚫 关闭 |
+| **策略组数** | **69** | **41** | **41** |
+| **规则条数** | **52** | **45** | **44** |
 
 
 ## 📄 配置文件详解 (Details)
@@ -25,6 +22,26 @@
 ### 📝 MihomoSmartAIO.yaml
 - **大小**: 32.1 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/HenryChiao/MihomoSmartAIO.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 127.0.0.1:9090 | 控制面板 |
+| 👂 SS-IN | 10000 | shadowsocks |
+| 👂 MIXED-SG | 50000 | mixed |
+| 👂 MIXED-US | 50001 | mixed |
+| 👂 MIXED-TW | 50002 | mixed |
+| 👂 MIXED-HK | 50003 | mixed |
+| 👂 MIXED-JP | 50004 | mixed |
+| 👂 MIXED-KR | 50005 | mixed |
+| 👂 MIXED-EU | 50006 | mixed |
+| 👂 MIXED-AL | 50007 | mixed |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (69个)</b></summary>
@@ -50,7 +67,6 @@
 
 </details>
 
-
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
 
@@ -67,6 +83,26 @@
 ### 📝 MihomoSmartProMax.yaml
 - **大小**: 25.2 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/HenryChiao/MihomoSmartProMax.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 127.0.0.1:9090 | 控制面板 |
+| 👂 SS-IN | 10000 | shadowsocks |
+| 👂 MIXED-SG | 50000 | mixed |
+| 👂 MIXED-US | 50001 | mixed |
+| 👂 MIXED-TW | 50002 | mixed |
+| 👂 MIXED-HK | 50003 | mixed |
+| 👂 MIXED-JP | 50004 | mixed |
+| 👂 MIXED-KR | 50005 | mixed |
+| 👂 MIXED-EU | 50006 | mixed |
+| 👂 MIXED-AL | 50007 | mixed |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (41个)</b></summary>
@@ -91,7 +127,6 @@
 | ... | 还有 26 个 |
 
 </details>
-
 
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
@@ -110,6 +145,26 @@
 - **大小**: 25.7 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Smart_Mode/HenryChiao/MihomoSmartProPlus.yaml)
 
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7893 | HTTP/SOCKS |
+| HTTP | 7890 | 仅 HTTP |
+| SOCKS5 | 7891 | 仅 SOCKS |
+| TProxy | 7895 | 透明代理 (UDP) |
+| Redirect | 7892 | 透明代理 (TCP) |
+| Controller | 127.0.0.1:9090 | 控制面板 |
+| 👂 SS-IN | 10000 | shadowsocks |
+| 👂 MIXED-SG | 50000 | mixed |
+| 👂 MIXED-US | 50001 | mixed |
+| 👂 MIXED-TW | 50002 | mixed |
+| 👂 MIXED-HK | 50003 | mixed |
+| 👂 MIXED-JP | 50004 | mixed |
+| 👂 MIXED-KR | 50005 | mixed |
+| 👂 MIXED-EU | 50006 | mixed |
+| 👂 MIXED-AL | 50007 | mixed |
+
+
 <details>
 <summary><b>🔎 点击查看策略组架构 (41个)</b></summary>
 
@@ -133,7 +188,6 @@
 | ... | 还有 26 个 |
 
 </details>
-
 
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>

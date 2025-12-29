@@ -4,7 +4,13 @@
 
 > 🤖 **自动分析报告** | Auto-generated Report
 
-> 本目录包含 **0** 个主要配置文件。
+## 📄 配置文件详解 (Details)
+
+### 📝 config.yaml
+- **大小**: 14 B
+- **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/Mobile_Modules/AkashaProxy/config.yaml)
+
+---
 
 ## 📦 所有文件列表 (File List)
 

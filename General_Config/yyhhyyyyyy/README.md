@@ -4,20 +4,17 @@
 
 > 🤖 **自动分析报告** | Auto-generated Report
 
-> 本目录包含 **2** 个主要配置文件。
-
 ## ⚔️ 配置横向对比 (Comparison)
 
-| 特性 / 文件 | 大小 (Size) | `mihomo_multi.yaml` | `mihomo_single.yaml` |
-| :--- | :--- | :--- | :--- |
-| **文件大小** | - | 18.1 KB | 17.8 KB |
-| **混合端口** | - | 7897 | 7897 |
-| **运行模式** | - | rule | rule |
-| **TUN 模式** | - | ✅ 开启 | ✅ 开启 |
-| **IPv6** | - | 🚫 | 🚫 |
-| **允许局域网** | - | ✅ | ✅ |
-| **策略组数量** | - | **55** | **55** |
-| **规则条数** | - | **27** | **27** |
+| 特性 / 文件 | `mihomo_multi.yaml` | `mihomo_single.yaml` |
+| :--- | :--- | :--- |
+| **文件大小** | 18.1 KB | 17.8 KB |
+| **混合端口** | 7897 | 7897 |
+| **控制面板** | - | - |
+| **运行模式** | rule | rule |
+| **TUN 模式** | ✅ 开启 | ✅ 开启 |
+| **策略组数** | **55** | **55** |
+| **规则条数** | **27** | **27** |
 
 
 ## 📄 配置文件详解 (Details)
@@ -25,6 +22,12 @@
 ### 📝 mihomo_multi.yaml
 - **大小**: 18.1 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/General_Config/yyhhyyyyyy/mihomo_multi.yaml)
+
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7897 | HTTP/SOCKS |
+
 
 <details>
 <summary><b>🔎 点击查看策略组架构 (55个)</b></summary>
@@ -49,7 +52,6 @@
 | ... | 还有 40 个 |
 
 </details>
-
 
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
@@ -68,6 +70,12 @@
 - **大小**: 17.8 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/General_Config/yyhhyyyyyy/mihomo_single.yaml)
 
+#### 📶 网络端口配置 (Ports)
+| 类型 | 端口/地址 | 说明 |
+| :--- | :--- | :--- |
+| Mixed (混合) | 7897 | HTTP/SOCKS |
+
+
 <details>
 <summary><b>🔎 点击查看策略组架构 (55个)</b></summary>
 
@@ -91,7 +99,6 @@
 | ... | 还有 40 个 |
 
 </details>
-
 
 <details>
 <summary><b>🌐 点击查看 DNS 配置</b></summary>
