@@ -7,14 +7,13 @@
 ## 📄 配置文件详解 (Details)
 
 ### 📝 config.yaml
-- **大小**: 26.8 KB
+- **大小**: 27.0 KB
 - **链接**: [查看源码](https://github.com/HenryChiao/mihomo_yamls/blob/main/General_Config/wanswu/config.yaml)
 
 #### 📶 网络端口配置 (Ports)
 | 类型 | 端口/地址 | 说明 |
 | :--- | :--- | :--- |
 | Mixed (混合) | 7890 | HTTP/SOCKS |
-| Controller | 127.0.0.1:9090 | 控制面板 |
 
 
 <details>
@@ -58,4 +57,4 @@
 
 | 文件名 | 大小 | 链接 |
 | :--- | :--- | :--- |
-| `config.yaml` | 26.8 KB | [查看](https://github.com/HenryChiao/mihomo_yamls/blob/main/General_Config/wanswu/config.yaml) |
+| `config.yaml` | 27.0 KB | [查看](https://github.com/HenryChiao/mihomo_yamls/blob/main/General_Config/wanswu/config.yaml) |
