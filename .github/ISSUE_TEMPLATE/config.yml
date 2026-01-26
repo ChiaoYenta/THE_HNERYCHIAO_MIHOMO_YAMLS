@@ -1,7 +1,7 @@
 blank_issues_enabled: false  # 禁止创建空白 Issue，强制使用模板
 contact_links:
-  - name: Can use the configured software / 能使用本项目配置的软件
-    url: https://wiki.metacubex.one/
+  - name: ✈ Can use the configured software / 能使用本项目配置的软件
+    url: https://github.com/HenryChiao/mihomo_yamls/blob/main/CLIENTS.md
     about: Some platform software that can use yaml files / 一些能使用yaml文件的各平台软件
   - name: 💬 Telegram Discussion / 交流群组
     url: https://t.me/qiao_blog # 如果有 TG 群可以填，没有则删除此段
