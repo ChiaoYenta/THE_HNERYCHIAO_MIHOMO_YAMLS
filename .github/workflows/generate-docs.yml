@@ -1,4 +1,4 @@
-Name: Generate Documentation
+name: Generate Documentation
 
 on:
   workflow_run:
