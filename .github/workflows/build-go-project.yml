@@ -1,0 +1,222 @@
+name: Reusable - Build Go Project
+
+on:
+  workflow_call:
+    inputs:
+      project:
+        description: '项目名称 (sing-box)'
+        required: true
+        type: string
+      variant:
+        description: '变体标识'
+        required: true
+        type: string
+      version:
+        description: '版本号'
+        required: true
+        type: string
+      build_tags:
+        description: 'Go构建标签'
+        required: true
+        type: string
+      go_version:
+        description: 'Go版本'
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          # Linux平台
+          - { platform: linux, arch: amd64-v1 }
+          - { platform: linux, arch: amd64-v3 }
+          - { platform: linux, arch: armv5 }
+          - { platform: linux, arch: armv6 }
+          - { platform: linux, arch: armv7 }
+          - { platform: linux, arch: arm64 }
+          - { platform: linux, arch: mips-softfloat }
+          - { platform: linux, arch: mipsle-softfloat }
+          - { platform: linux, arch: mipsle-hardfloat }
+          # Windows平台
+          - { platform: windows, arch: amd64-v1 }
+          - { platform: windows, arch: amd64-v3 }
+          - { platform: windows, arch: arm64 }
+          # macOS平台
+          - { platform: darwin, arch: amd64 }
+          - { platform: darwin, arch: arm64 }
+          # Android平台（需要CGO）
+          - { platform: android, arch: arm64, cgo: true }
+          - { platform: android, arch: armv7, cgo: true }
+          - { platform: android, arch: amd64, cgo: true }
+      fail-fast: false
+    
+    steps:
+      - name: Checkout主仓库（获取处理脚本）
+        uses: actions/checkout@v4
+
+      - name: Setup Go环境
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ inputs.go_version }}
+          cache: false
+
+      - name: 安装Android NDK
+        if: matrix.platform == 'android'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          
+          # 下载NDK
+          NDK_VERSION="r26b"
+          wget -q "https://dl.google.com/android/repository/android-ndk-${NDK_VERSION}-linux.zip" -O /tmp/ndk.zip
+          unzip -q /tmp/ndk.zip -d /tmp/
+          echo "ANDROID_NDK_HOME=/tmp/android-ndk-${NDK_VERSION}" >> $GITHUB_ENV
+          echo "NDK路径: /tmp/android-ndk-${NDK_VERSION}"
+
+      - name: 设置环境变量
+        run: |
+          case "${{ matrix.arch }}" in
+            amd64-v1)
+              echo "GOARCH=amd64" >> $GITHUB_ENV
+              echo "GOAMD64=v1" >> $GITHUB_ENV
+              ;;
+            amd64-v3)
+              echo "GOARCH=amd64" >> $GITHUB_ENV
+              echo "GOAMD64=v3" >> $GITHUB_ENV
+              ;;
+            armv5)
+              echo "GOARCH=arm" >> $GITHUB_ENV
+              echo "GOARM=5" >> $GITHUB_ENV
+              ;;
+            armv6)
+              echo "GOARCH=arm" >> $GITHUB_ENV
+              echo "GOARM=6" >> $GITHUB_ENV
+              ;;
+            armv7)
+              echo "GOARCH=arm" >> $GITHUB_ENV
+              echo "GOARM=7" >> $GITHUB_ENV
+              ;;
+            arm64)
+              echo "GOARCH=arm64" >> $GITHUB_ENV
+              ;;
+            mips-softfloat)
+              echo "GOARCH=mips" >> $GITHUB_ENV
+              echo "GOMIPS=softfloat" >> $GITHUB_ENV
+              ;;
+            mipsle-softfloat)
+              echo "GOARCH=mipsle" >> $GITHUB_ENV
+              echo "GOMIPS=softfloat" >> $GITHUB_ENV
+              ;;
+            mipsle-hardfloat)
+              echo "GOARCH=mipsle" >> $GITHUB_ENV
+              echo "GOMIPS=hardfloat" >> $GITHUB_ENV
+              ;;
+          esac
+          
+          echo "GOOS=${{ matrix.platform }}" >> $GITHUB_ENV
+          
+          # Android需要CGO
+          if [[ "${{ matrix.platform }}" == "android" ]]; then
+            echo "CGO_ENABLED=1" >> $GITHUB_ENV
+            
+            # 设置NDK工具链
+            NDK_HOME="/tmp/android-ndk-r26b"
+            
+            case "${{ matrix.arch }}" in
+              arm64)
+                TOOLCHAIN="aarch64-linux-android21"
+                CC="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64/bin/${TOOLCHAIN}-clang"
+                ;;
+              armv7)
+                TOOLCHAIN="armv7a-linux-androideabi21"
+                CC="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64/bin/${TOOLCHAIN}-clang"
+                ;;
+              amd64)
+                TOOLCHAIN="x86_64-linux-android21"
+                CC="${NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64/bin/${TOOLCHAIN}-clang"
+                ;;
+            esac
+            
+            echo "CC=${CC}" >> $GITHUB_ENV
+            echo "CXX=${CC}++" >> $GITHUB_ENV
+            echo "使用工具链: ${TOOLCHAIN}"
+          else
+            echo "CGO_ENABLED=0" >> $GITHUB_ENV
+          fi
+
+      - name: 克隆并构建
+        run: |
+          # 确定仓库和分支
+          case "${{ inputs.variant }}" in
+            ref1nd-main)
+              REPO="reF1nd/sing-box"
+              REF="reF1nd-main"
+              ;;
+            ref1nd-dev)
+              REPO="reF1nd/sing-box"
+              REF="reF1nd-dev"
+              ;;
+            sagernet-release)
+              REPO="SagerNet/sing-box"
+              REF="main"
+              ;;
+            sagernet-dev)
+              REPO="SagerNet/sing-box"
+              REF="dev"
+              ;;
+            *)
+              echo "未知变体: ${{ inputs.variant }}"
+              exit 1
+              ;;
+          esac
+
+          echo "克隆仓库: $REPO (分支: $REF)"
+          git clone --depth=1 --branch="$REF" "https://github.com/${REPO}.git" ./src
+          
+          cd ./src
+          
+          # 确定输出文件名
+          OUTPUT_NAME="sing-box"
+          if [[ "${{ matrix.platform }}" == "windows" ]]; then
+            OUTPUT_NAME="sing-box.exe"
+          fi
+          
+          echo "构建: ${{ inputs.project }} ${{ inputs.variant }} ${{ matrix.platform }}/${{ matrix.arch }}"
+          echo "CGO_ENABLED=${CGO_ENABLED}"
+          [[ -n "${CC:-}" ]] && echo "CC=${CC}"
+          
+          go build -v -trimpath \
+            -ldflags "-checklinkname=0 -X 'github.com/sagernet/sing-box/constant.Version=${{ inputs.version }}' -s -w -buildid=" \
+            -tags "${{ inputs.build_tags }}" \
+            -o "../${OUTPUT_NAME}" \
+            ./cmd/sing-box
+          
+          cd ..
+          ls -lh "./${OUTPUT_NAME}"
+
+      - name: 处理产物
+        run: |
+          mkdir -p ./artifacts
+          
+          SOURCE_FILE="sing-box"
+          if [[ "${{ matrix.platform }}" == "windows" ]]; then
+            SOURCE_FILE="sing-box.exe"
+          fi
+          
+          bash .github/scripts/lib/artifact-handler.sh \
+            "./${SOURCE_FILE}" \
+            "${{ inputs.project }}" \
+            "${{ inputs.variant }}" \
+            "${{ matrix.platform }}" \
+            "${{ matrix.arch }}" \
+            "./artifacts"
+
+      - name: 上传产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.project }}-${{ inputs.variant }}-${{ matrix.platform }}-${{ matrix.arch }}
+          path: ./artifacts/*
+          retention-days: 1
