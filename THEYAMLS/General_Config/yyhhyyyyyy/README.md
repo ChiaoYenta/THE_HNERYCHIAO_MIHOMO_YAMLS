@@ -19,7 +19,7 @@
 ## 📄 配置详情
 
 #### 📝 mihomo_multi.yaml
-- **路径**: `mihomo_multi.yaml` | **大小**: 17.1 KB | [查看源码](https://github.com/HenryChiao/MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/yyhhyyyyyy/mihomo_multi.yaml)
+- **路径**: `mihomo_multi.yaml` | **大小**: 17.1 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/yyhhyyyyyy/mihomo_multi.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: 🚫
 <details>
 <summary>🔍 策略组 (55个)</summary>
@@ -50,7 +50,7 @@
 </details>
 
 #### 📝 mihomo_single.yaml
-- **路径**: `mihomo_single.yaml` | **大小**: 16.8 KB | [查看源码](https://github.com/HenryChiao/MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/yyhhyyyyyy/mihomo_single.yaml)
+- **路径**: `mihomo_single.yaml` | **大小**: 16.8 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/yyhhyyyyyy/mihomo_single.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: 🚫
 <details>
 <summary>🔍 策略组 (55个)</summary>
