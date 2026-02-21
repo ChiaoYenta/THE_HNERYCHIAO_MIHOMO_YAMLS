@@ -8,13 +8,13 @@
 
 | 特性 | `config.yaml` | `config.yaml` | `config.yaml` | `config.yaml` |
 | :--- | :--- | :--- | :--- | :--- |
-| **大小** | 19.1 KB | 8.2 KB | 4.2 KB | 6.5 KB |
+| **大小** | 19.1 KB | 6.6 KB | 4.2 KB | 8.2 KB |
 | **混合端口** | 7890 | 7890 | 7890 | 7890 |
-| **面板地址** | 0.0.0.0:9090 | 127.0.0.1:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 |
+| **面板地址** | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 127.0.0.1:9090 |
 | **运行模式** | Rule | rule | Rule | rule |
 | **TUN** | 🚫 | ✅ | ✅ | ✅ |
-| **策略组** | **34** | **20** | **3** | **5** |
-| **规则数** | **38** | **14** | **4** | **9** |
+| **策略组** | **34** | **5** | **3** | **20** |
+| **规则数** | **38** | **9** | **4** | **14** |
 
 ## 📄 配置详情
 
@@ -70,7 +70,7 @@
 ### 👤 ClashMix
 
 #### 📝 config.yaml
-- **路径**: `ClashMix/config.yaml` | **大小**: 6.5 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/Mobile_Modules/ClashMix/config.yaml)
+- **路径**: `ClashMix/config.yaml` | **大小**: 6.6 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/Mobile_Modules/ClashMix/config.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
 <summary>🔍 策略组 (5个)</summary>
