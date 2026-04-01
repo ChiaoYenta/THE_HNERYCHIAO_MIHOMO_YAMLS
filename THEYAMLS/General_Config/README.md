@@ -8,7 +8,7 @@
 
 | 特性 | `Clash_Sample.yaml` | `config.yaml` | `mihomo.yaml` | `Clash.yaml` | `ConfigForClash.yaml` | `config.yaml` | `config.yaml` | `config.yaml` | `config.yaml` | `clash-all-fallback.yaml` | `clash-fallback-all.yaml` | `clash-fallback-std.yaml` | `clash-fallback-dialer.yaml` | `clash-fallback.yaml` | `OneTouch_Config.yaml` | `MihomoPro_Config.yaml` | `mihomo_multi.yaml` | `mihomo_single.yaml` | `configfull.yaml` | `configfull_NoAd.yaml` | `configfull_lite.yaml` | `config_lite.yaml` | `config.yaml` | `AIO.yaml` | `AIB.yaml` | `MihomoAIO.yaml` | `MihomoProPlus.yaml` | `MihomoProMax.yaml` |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **大小** | 8.4 KB | 31.3 KB | 13.9 KB | 27.3 KB | 49.3 KB | 28.5 KB | 12.8 KB | 13.8 KB | 18.7 KB | 17.2 KB | 18.6 KB | 17.3 KB | 16.3 KB | 15.9 KB | 12.4 KB | 22.6 KB | 12.9 KB | 12.6 KB | 34.6 KB | 34.1 KB | 17.7 KB | 3.0 KB | 8.2 KB | 10.8 KB | 11.0 KB | 30.1 KB | 27.9 KB | 27.4 KB |
+| **大小** | 8.4 KB | 31.7 KB | 13.9 KB | 27.3 KB | 49.3 KB | 28.5 KB | 12.8 KB | 13.8 KB | 18.7 KB | 17.2 KB | 18.6 KB | 17.3 KB | 16.3 KB | 15.9 KB | 12.4 KB | 22.6 KB | 12.9 KB | 12.6 KB | 34.6 KB | 34.1 KB | 17.7 KB | 3.0 KB | 8.2 KB | 10.8 KB | 11.0 KB | 30.1 KB | 27.9 KB | 27.4 KB |
 | **混合端口** | 7892 | 7890 | 0 | 7890 | 7892 | 7893 | 7890 | 7890 | 7892 | 7893 | 7893 | 7893 | 7893 | 7893 | 7893 | 7893 | 7897 | 7897 | 7890 | 7890 | 7890 | 7893 | 7893 | 7890 | 7890 | 7893 | 7893 | 7893 |
 | **面板地址** | 0.0.0.0:9090 | 127.0.0.1:9090 | - | :9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | - | :9090 | 127.0.0.1:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | - | - | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | - | - | 0.0.0.0:9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 |
 | **运行模式** | rule | rule | rule | Rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule |
@@ -794,7 +794,7 @@
 ### 👤 wanswu
 
 #### 📝 config.yaml
-- **路径**: `wanswu/config.yaml` | **大小**: 31.3 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/wanswu/config.yaml)
+- **路径**: `wanswu/config.yaml` | **大小**: 31.7 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/wanswu/config.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
 <summary>🔍 策略组 (115个)</summary>
