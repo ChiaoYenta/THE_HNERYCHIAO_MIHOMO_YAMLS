@@ -8,13 +8,13 @@
 
 | 特性 | `Clash_Sample.yaml` | `config.yaml` | `mihomo.yaml` | `Clash.yaml` | `ConfigForClash.yaml` | `config.yaml` | `config.yaml` | `config.yaml` | `config.yaml` | `clash-all-fallback.yaml` | `clash-fallback-all.yaml` | `clash-fallback-std.yaml` | `clash-fallback-dialer.yaml` | `clash-fallback.yaml` | `OneTouch_Config.yaml` | `MihomoPro_Config.yaml` | `mihomo_multi.yaml` | `mihomo_single.yaml` | `configfull.yaml` | `configfull_NoAd.yaml` | `configfull_lite.yaml` | `config_lite.yaml` | `config.yaml` | `AIO.yaml` | `AIB.yaml` | `MihomoAIO.yaml` | `MihomoProPlus.yaml` | `MihomoProMax.yaml` |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **大小** | 8.4 KB | 31.7 KB | 13.9 KB | 27.3 KB | 49.3 KB | 28.5 KB | 12.8 KB | 13.8 KB | 18.7 KB | 17.2 KB | 18.6 KB | 17.3 KB | 16.3 KB | 15.9 KB | 12.4 KB | 22.6 KB | 12.9 KB | 12.6 KB | 34.6 KB | 34.1 KB | 17.7 KB | 3.0 KB | 8.2 KB | 10.8 KB | 11.0 KB | 30.1 KB | 27.9 KB | 27.4 KB |
+| **大小** | 8.4 KB | 31.7 KB | 13.1 KB | 27.3 KB | 49.3 KB | 28.5 KB | 12.8 KB | 13.8 KB | 18.7 KB | 17.2 KB | 18.6 KB | 17.3 KB | 16.3 KB | 15.9 KB | 12.4 KB | 22.6 KB | 12.9 KB | 12.6 KB | 34.6 KB | 34.1 KB | 17.7 KB | 3.0 KB | 8.2 KB | 10.8 KB | 11.0 KB | 30.1 KB | 27.9 KB | 27.4 KB |
 | **混合端口** | 7892 | 7890 | 0 | 7890 | 7892 | 7893 | 7890 | 7890 | 7892 | 7893 | 7893 | 7893 | 7893 | 7893 | 7893 | 7893 | 7897 | 7897 | 7890 | 7890 | 7890 | 7893 | 7893 | 7890 | 7890 | 7893 | 7893 | 7893 |
 | **面板地址** | 0.0.0.0:9090 | 127.0.0.1:9090 | - | :9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | - | :9090 | 127.0.0.1:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | - | - | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | - | - | 0.0.0.0:9090 | 0.0.0.0:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 |
 | **运行模式** | rule | rule | rule | Rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule |
 | **TUN** | ✅ | ✅ | ✅ | 🚫 | 🚫 | ✅ | ✅ | 🚫 | 🚫 | ✅ | ✅ | ✅ | ✅ | ✅ | 🚫 | 🚫 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🚫 | 🚫 | 🚫 |
-| **策略组** | **15** | **115** | **20** | **27** | **62** | **25** | **26** | **29** | **13** | **53** | **61** | **36** | **35** | **34** | **15** | **52** | **33** | **33** | **62** | **59** | **47** | **1** | **18** | **23** | **24** | **61** | **54** | **54** |
-| **规则数** | **11** | **32** | **21** | **68** | **62** | **35** | **23** | **33** | **37** | **42** | **53** | **43** | **43** | **43** | **23** | **40** | **22** | **22** | **98** | **97** | **38** | **16** | **26** | **34** | **34** | **52** | **44** | **45** |
+| **策略组** | **15** | **115** | **21** | **27** | **62** | **25** | **26** | **29** | **13** | **53** | **61** | **36** | **35** | **34** | **15** | **52** | **33** | **33** | **62** | **59** | **47** | **1** | **18** | **23** | **24** | **61** | **54** | **54** |
+| **规则数** | **11** | **32** | **25** | **68** | **62** | **35** | **23** | **33** | **37** | **42** | **53** | **43** | **43** | **43** | **23** | **40** | **22** | **22** | **98** | **97** | **38** | **16** | **26** | **34** | **34** | **52** | **44** | **45** |
 
 ## 📄 配置详情
 
@@ -473,20 +473,20 @@
 ### 👤 echs-top
 
 #### 📝 mihomo.yaml
-- **路径**: `echs-top/mihomo.yaml` | **大小**: 13.9 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/echs-top/mihomo.yaml)
+- **路径**: `echs-top/mihomo.yaml` | **大小**: 13.1 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/echs-top/mihomo.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
-<summary>🔍 策略组 (20个)</summary>
+<summary>🔍 策略组 (21个)</summary>
 
 | 名称 | 类型 |
 | :--- | :--- |
 | 👆 代理连接 | `select` |
 | 👆 直接连接 | `select` |
 | 👆 代理DNS | `select` |
-| 👆 FCM推送 | `select` |
+| 👆 国外AI | `select` |
 | 👆 TELEGRAM | `select` |
 | 👆 GITHUB | `select` |
-| 👆 国外AI | `select` |
+| 👆 国外媒体 | `select` |
 | 👆 GOOGLE | `select` |
 | ♻️ 最低延迟 | `url-test` |
 | 🔧 香港&#124;故障转移 | `fallback` |
@@ -500,6 +500,7 @@
 | 🔧 英国&#124;故障转移 | `fallback` |
 | 🔧 法国&#124;故障转移 | `fallback` |
 | 🔧 荷兰&#124;故障转移 | `fallback` |
+| ... | 还有 1 个 |
 </details>
 
 ---
