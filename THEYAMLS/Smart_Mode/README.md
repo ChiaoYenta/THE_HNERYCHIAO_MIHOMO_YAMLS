@@ -8,13 +8,13 @@
 
 | 特性 | `clash-fallback-smart-std.yaml` | `clash-all-fallback-smart.yaml` | `clash-all-smart.yaml` | `smart.yaml` | `OneSmart_Lite_Config.yaml` | `OneSmart_Config.yaml` | `MihomoSmartAIO.yaml` | `MihomoSmartProPlus.yaml` | `MihomoSmartProMax.yaml` | `THESmart.yaml` | `mihomo_smart.yaml` | `OneSmartProMCX.yaml` |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **大小** | 17.7 KB | 18.2 KB | 15.1 KB | 13.0 KB | 12.5 KB | 20.1 KB | 32.1 KB | 25.7 KB | 25.1 KB | 24.9 KB | 13.6 KB | 41.1 KB |
+| **大小** | 17.7 KB | 18.2 KB | 15.1 KB | 13.0 KB | 12.5 KB | 20.1 KB | 32.1 KB | 25.7 KB | 25.1 KB | 24.9 KB | 14.6 KB | 41.1 KB |
 | **混合端口** | 7893 | 7893 | 7893 | 7890 | 7893 | 7893 | 7893 | 7893 | 7893 | 7893 | 0 | 7893 |
 | **面板地址** | 0.0.0.0:9090 | 0.0.0.0:9090 | 0.0.0.0:9090 | - | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | 127.0.0.1:9090 | 0.0.0.0:9090 | - | 0.0.0.0:9090 |
 | **运行模式** | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule | rule |
 | **TUN** | ✅ | ✅ | ✅ | ✅ | 🚫 | 🚫 | 🚫 | 🚫 | 🚫 | ✅ | ✅ | ✅ |
-| **策略组** | **36** | **57** | **38** | **28** | **16** | **31** | **69** | **41** | **41** | **40** | **21** | **32** |
-| **规则数** | **42** | **48** | **43** | **23** | **21** | **36** | **52** | **44** | **45** | **43** | **25** | **107** |
+| **策略组** | **36** | **57** | **38** | **28** | **16** | **31** | **69** | **41** | **41** | **40** | **23** | **32** |
+| **规则数** | **42** | **48** | **43** | **23** | **21** | **36** | **52** | **44** | **45** | **43** | **29** | **107** |
 
 ## 📄 配置详情
 
@@ -208,21 +208,23 @@
 ### 👤 echs-top
 
 #### 📝 mihomo_smart.yaml
-- **路径**: `echs-top/mihomo_smart.yaml` | **大小**: 13.6 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/Smart_Mode/echs-top/mihomo_smart.yaml)
+- **路径**: `echs-top/mihomo_smart.yaml` | **大小**: 14.6 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/Smart_Mode/echs-top/mihomo_smart.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
-<summary>🔍 策略组 (21个)</summary>
+<summary>🔍 策略组 (23个)</summary>
 
 | 名称 | 类型 |
 | :--- | :--- |
 | 👆 代理连接 | `select` |
 | 👆 直接连接 | `select` |
 | 👆 代理DNS | `select` |
+| 👆 人机验证 | `select` |
 | 👆 国外AI | `select` |
 | 👆 TELEGRAM | `select` |
 | 👆 GITHUB | `select` |
 | 👆 国外媒体 | `select` |
 | 👆 GOOGLE | `select` |
+| 👆 TRACKER | `select` |
 | ♻️ 最低延迟 | `url-test` |
 | 👆 香港&#124;智能选择 | `smart` |
 | 👆 台湾&#124;智能选择 | `smart` |
@@ -233,9 +235,7 @@
 | 👆 加拿大&#124;智能选择 | `smart` |
 | 👆 德国&#124;智能选择 | `smart` |
 | 👆 英国&#124;智能选择 | `smart` |
-| 👆 法国&#124;智能选择 | `smart` |
-| 👆 荷兰&#124;智能选择 | `smart` |
-| ... | 还有 1 个 |
+| ... | 还有 3 个 |
 </details>
 
 ---
