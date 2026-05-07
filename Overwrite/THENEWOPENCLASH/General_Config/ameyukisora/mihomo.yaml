@@ -1,6 +1,6 @@
-# OpenClash 覆写模块 - config.yaml
+# OpenClash 覆写模块 - mihomo.yaml
 # 生成日期：2026-05-07
-# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/liuran001/config.yaml
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/ameyukisora/mihomo.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -83,21 +83,17 @@
 # ==========================================================
 #
 # proxy-providers:
-#   订阅一:
-#     health-check: &id001
+#   subscription:
+#     exclude-filter: 官|流量|Traffic|Expire|自动更新订阅|剩余|过期|网址
+#     health-check:
 #       enable: true
-#       interval: 300
-#       timeout: 1000
-#       tolerance: 100
-#       url: https://cp.cloudflare.com
-#     interval: 3600
+#       interval: 900
+#       url: https://www.gstatic.com/generate_204
+#     interval: 86400
+#     path: ./providers/subscription.yaml
+#     proxy: DIRECT
 #     type: http
-#     url: https://example.com/airport?type=clashmeta&protocol=shadowsocks&rule=default
-#   订阅二:
-#     health-check: *id001
-#     interval: 3600
-#     type: http
-#     url: https://example.com/api/v1/client/subscribe?token=ilovechina
+#     url: https://example.com/your-sub-url.yaml
 
 # ==========================================================
 # proxy-groups（从源文件直接提取）
@@ -108,134 +104,61 @@
 # ==========================================================
 #
 # proxy-groups:
-# - name: 节点选择
+# - filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
+#   icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/start.png
+#   include-all-providers: true
+#   name: 节点选择
 #   proxies:
-#   - 全部节点
-#   - 自动选择
-#   - 香港
-#   - 台湾
-#   - 日本
-#   - 新加坡
-#   - 美国
-#   - 其它地区
-#   - DIRECT
+#   - 其他节点
 #   type: select
-# - name: dns
-#   proxies: &id001
+# - filter: (日本|JP|Japan|🇯🇵)
+#   icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/cherry-blossom.png
+#   include-all-providers: true
+#   name: 日区网站
+#   proxies:
 #   - 节点选择
-#   - 香港
-#   - 台湾
-#   - 日本
-#   - 新加坡
-#   - 美国
-#   - 其它地区
-#   - 全部节点
-#   - 自动选择
+#   type: select
+# - exclude-filter: (港|HK|Hong Kong|日本|JP|Japan|🇭🇰|🇯🇵)
+#   icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/Global.png
+#   include-all-providers: true
+#   name: 其他节点
+#   proxies:
 #   - DIRECT
 #   type: select
-# - name: 广告拦截
+# - icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/ehentai.png
+#   include-all-providers: true
+#   name: EH图库
+#   type: select
+# - filter: (港|HK|Hong Kong|🇭🇰)
+#   icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/steam.png
+#   include-all-providers: true
+#   name: 游戏平台
+#   proxies:
+#   - DIRECT
+#   - 节点选择
+#   type: select
+# - icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/telegram.png
+#   include-all-providers: true
+#   name: 电报消息
+#   type: select
+# - icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/Google.png
+#   include-all-providers: true
+#   name: Google
+#   type: select
+# - icon: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/icon/AWAvenue.png
+#   name: 秋风净化
 #   proxies:
 #   - REJECT
+#   - REJECT-DROP
+#   - PASS
 #   - DIRECT
 #   - 节点选择
 #   type: select
-# - name: 境外AI
-#   proxies: *id001
-#   type: select
-# - name: Apple
-#   proxies: *id001
-#   type: select
-# - name: Google
-#   proxies: *id001
-#   type: select
-# - name: Telegram
-#   proxies: *id001
-#   type: select
-# - name: Twitter
-#   proxies: *id001
-#   type: select
-# - name: Pixiv
-#   proxies: *id001
-#   type: select
-# - name: ehentai
-#   proxies: *id001
-#   type: select
-# - name: 巴哈姆特
-#   proxies: *id001
-#   type: select
-# - name: YouTube
-#   proxies: *id001
-#   type: select
-# - name: NETFLIX
-#   proxies: *id001
-#   type: select
-# - name: TikTok
-#   proxies: *id001
-#   type: select
-# - name: Spotify
-#   proxies: *id001
-#   type: select
-# - name: Github
-#   proxies: *id001
-#   type: select
-# - name: Steam
-#   proxies: *id001
-#   type: select
-# - name: OneDrive
-#   proxies: *id001
-#   type: select
-# - name: 微软服务
-#   proxies: *id001
-#   type: select
-# - name: 国内
+# - hidden: true
+#   name: ♾️
 #   proxies:
-#   - DIRECT
 #   - 节点选择
-#   - 香港
-#   - 台湾
-#   - 日本
-#   - 新加坡
-#   - 美国
-#   - 其它地区
-#   - 全部节点
-#   - 自动选择
 #   type: select
-# - name: 其他
-#   proxies: *id001
-#   type: select
-# - filter: (?i)港|hk|hongkong|hong kong
-#   name: 香港
-#   type: url-test
-#   use: &id002
-#   - 订阅一
-#   - 订阅二
-# - filter: (?i)台|tw|taiwan
-#   name: 台湾
-#   type: url-test
-#   use: *id002
-# - filter: (?i)日本|jp|japan
-#   name: 日本
-#   type: url-test
-#   use: *id002
-# - filter: (?i)美|us|unitedstates|united states
-#   name: 美国
-#   type: url-test
-#   use: *id002
-# - filter: (?i)(新|sg|singapore)
-#   name: 新加坡
-#   type: url-test
-#   use: *id002
-# - filter: (?i)^(?!.*(?:🇭🇰|🇯🇵|🇺🇸|🇸🇬|🇨🇳|港|hk|hongkong|台|tw|taiwan|日|jp|japan|新|sg|singapore|美|us|unitedstates)).*
-#   name: 其它地区
-#   type: url-test
-#   use: *id002
-# - name: 全部节点
-#   type: url-test
-#   use: *id002
-# - name: 自动选择
-#   tolerance: 2
-#   type: url-test
-#   use: *id002
 
 # ==========================================================
 # rule-providers（从源文件直接提取）
@@ -245,13 +168,82 @@
 # ==========================================================
 #
 # rule-providers:
-#   AWAvenue-Ads:
+#   AWAvenue-Ads-Rule:
 #     behavior: domain
-#     format: yaml
-#     interval: 600
-#     path: ./rule_provider/AWAvenue-Ads.yaml
+#     format: mrs
+#     interval: 86400
+#     path: ./rule_provider/AWAvenue-Ads-Rule-Clash.mrs
 #     type: http
-#     url: https://ghfast.top/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
+#     url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.mrs
+#   ExHentai:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/ExHentai.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/ExHentai.yaml
+#   Google:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/Google.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Google.yaml
+#   JapanWeb:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/JapanWeb.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/JapanWeb.yaml
+#   Proxy:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/Proxy.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Proxy.yaml
+#   SpecialDirect:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/SpecialDirect.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/SpecialDirect.yaml
+#   Steam:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/Steam.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Steam.yaml
+#   Telegram:
+#     behavior: classical
+#     interval: 86400
+#     path: ./rule_provider/Telegram.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/Telegram.yaml
+#   cn:
+#     behavior: ipcidr
+#     format: mrs
+#     interval: 86400
+#     path: ./rule_provider/cn.mrs
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn.mrs
+#   cn_v6:
+#     behavior: ipcidr
+#     format: mrs
+#     interval: 86400
+#     path: ./rule_provider/cn_v6.mrs
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/cn_v6.mrs
+#   fakeip-filter:
+#     behavior: domain
+#     interval: 86400
+#     path: ./rule_provider/fakeip-filter.yaml
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/provider/fakeip-filter.yaml
+#   gfw:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     path: ./rule_provider/gfw.mrs
+#     type: http
+#     url: https://raw.githubusercontent.com/ameyukisora/Clash-Rule/master/autoupdate/gfw.mrs
 
 # ==========================================================
 # rules（从源文件直接提取）
@@ -265,39 +257,18 @@
 # ==========================================================
 #
 # rules:
-# - RULE-SET,AWAvenue-Ads,广告拦截
-# - GEOSITE,category-scholar-!cn,境外AI
-# - GEOSITE,apple,Apple
-# - GEOSITE,apple-cn,Apple
-# - GEOSITE,ehentai,ehentai
-# - GEOSITE,github,Github
-# - GEOSITE,twitter,Twitter
-# - GEOSITE,youtube,YouTube
-# - GEOSITE,google,Google
-# - GEOSITE,google-cn,Google
-# - GEOSITE,telegram,Telegram
-# - GEOSITE,netflix,NETFLIX
-# - GEOSITE,tiktok,TikTok
-# - GEOSITE,bahamut,巴哈姆特
-# - GEOSITE,spotify,Spotify
-# - GEOSITE,pixiv,Pixiv
-# - GEOSITE,steam@cn,DIRECT
-# - GEOSITE,steam,Steam
-# - GEOSITE,onedrive,OneDrive
-# - GEOSITE,microsoft,微软服务
-# - GEOSITE,geolocation-!cn,其他
-# - GEOIP,google,Google
-# - GEOIP,netflix,NETFLIX
-# - GEOIP,telegram,Telegram
-# - GEOIP,twitter,Twitter
-# - GEOSITE,CN,国内
-# - GEOIP,CN,国内
-# - IP-CIDR,10.0.0.0/8,DIRECT
-# - IP-CIDR,172.16.0.0/12,DIRECT
-# - IP-CIDR,192.168.0.0/16,DIRECT
-# - IP-CIDR,100.64.0.0/10,DIRECT
-# - IP-CIDR,127.0.0.0/8,DIRECT
-# - MATCH,其他
+# - RULE-SET,AWAvenue-Ads-Rule,秋风净化
+# - RULE-SET,SpecialDirect,DIRECT
+# - RULE-SET,ExHentai,EH图库
+# - RULE-SET,JapanWeb,日区网站
+# - RULE-SET,Steam,游戏平台
+# - RULE-SET,Telegram,电报消息
+# - RULE-SET,Google,Google
+# - RULE-SET,Proxy,节点选择
+# - RULE-SET,gfw,节点选择
+# - RULE-SET,cn,DIRECT
+# - RULE-SET,cn_v6,DIRECT
+# - MATCH,♾️
 
 # ==========================================================
 # dns（从源文件直接提取）
@@ -308,32 +279,16 @@
 # ==========================================================
 #
 # dns:
+#   cache-algorithm: arc
 #   default-nameserver:
 #   - 223.5.5.5
 #   - 119.29.29.29
-#   - 114.114.114.114
-#   - '[2402:4e00::]'
-#   - '[2400:3200::1]'
 #   enable: true
-#   enhanced-mode: redir-host
+#   enhanced-mode: fake-ip
 #   fake-ip-filter:
-#   - '*'
-#   - +.lan
-#   - +.local
-#   fake-ip-range: 28.0.0.1/8
-#   ipv6: true
-#   listen: :1053
+#   - rule-set:fakeip-filter
 #   nameserver:
-#   - tls://8.8.4.4#dns
-#   - tls://1.0.0.1#dns
-#   - tls://[2001:4860:4860::8844]#dns
-#   - tls://[2606:4700:4700::1001]#dns
-#   nameserver-policy:
-#     geosite:!cn,!private:
-#     - tls://dns.google
-#     - tls://cloudflare-dns.com
-#     geosite:cn,private:
-#     - https://doh.pub/dns-query
-#     - https://dns.alidns.com/dns-query
+#   - system
 #   proxy-server-nameserver:
+#   - https://dns.alidns.com/dns-query
 #   - https://doh.pub/dns-query
