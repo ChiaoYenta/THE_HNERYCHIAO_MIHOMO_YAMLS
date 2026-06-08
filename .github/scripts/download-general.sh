@@ -47,6 +47,7 @@ https://raw.githubusercontent.com/ameyukisora/Clash-Rule/refs/heads/master/mihom
 https://gh.669588.xyz/gist/01f635bc410f3503a218e03e537cb135/raw/ClashMi.yaml|THEYAMLS/General_Config/bgpeer/Clashmi.yaml
 https://gist.github.com/bgpeer/cfd6fcf7bc40c166984b87ecf4fbf920/raw/Clashmi-fx.yaml|THEYAMLS/General_Config/bgpeer/Clashmi-fx.yaml
 https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Config/mihomoConfig.yaml|THEYAMLS/General_Config/AIsouler/mihomoconfig.yaml
+https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Config/mihomoConfigLite.yaml|THEYAMLS/General_Config/AIsouler/mihomoConfigLite.yaml
 https://raw.githubusercontent.com/loneshu7/mihomo_rules/refs/heads/main/profile/mihomo.yaml|THEYAMLS/General_Config/loneshu7/mihomo.yaml
 https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/Seven1_fallback_Geo.yaml|THEYAMLS/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/Seven1_fallback_Rule-Set.yaml|THEYAMLS/General_Config/Seven1echo/Seven1_fallback_Rule-Set.yaml
