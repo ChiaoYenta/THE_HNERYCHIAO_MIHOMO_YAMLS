@@ -51,6 +51,9 @@ https://raw.githubusercontent.com/AIsouler/MyClash/refs/heads/main/Config/mihomo
 https://raw.githubusercontent.com/loneshu7/mihomo_rules/refs/heads/main/profile/mihomo.yaml|THEYAMLS/General_Config/loneshu7/mihomo.yaml
 https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/Seven1_fallback_Geo.yaml|THEYAMLS/General_Config/Seven1echo/Seven1_fallback_Geo.yaml
 https://raw.githubusercontent.com/Seven1echo/Yaml/refs/heads/main/Seven1_fallback_Rule-Set.yaml|THEYAMLS/General_Config/Seven1echo/Seven1_fallback_Rule-Set.yaml
+https://raw.githubusercontent.com/Ayanami0xL1l1th/Ayanami0-configs/refs/heads/main/Ayanami0's%20config.yaml|THEYAMLS/General_Config/Ayanami0-configs/Ayanami0_config.yaml
+https://raw.githubusercontent.com/Ayanami0xL1l1th/Ayanami0-configs/refs/heads/main/Ayanami0's%20config_full.yaml|THEYAMLS/General_Config/Ayanami0-configs/Ayanami0_config_full.yaml
+https://raw.githubusercontent.com/Ayanami0xL1l1th/Ayanami0-configs/refs/heads/main/Ayanami0's%20config_geo-lite.yaml|THEYAMLS/General_Config/Ayanami0-configs/Ayanami0_config_geo-lite.yaml
 EOF
 )
 
