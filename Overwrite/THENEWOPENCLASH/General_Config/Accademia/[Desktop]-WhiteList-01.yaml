@@ -1,6 +1,6 @@
 # OpenClash 覆写模块 - [Desktop]-WhiteList-01.yaml
-# 生成日期：2026-07-21
-# 源文件：https://raw.githubusercontent.com/HenryChiao/MIHOMO_YAMLS/main/THEYAMLS/General_Config/Accademia/%5BDesktop%5D-WhiteList-01.yaml
+# 生成日期：2026-09-26
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/Accademia/%5BDesktop%5D-WhiteList-01.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -4351,6 +4351,7 @@
 # - rule-set        , Google_Do_Resolve                          , ☁️.<Apps>--Google
 # - geosite         , amazon                                     , ☁️.<Apps>--Amazon
 # - rule-set        , Amazon_Do_Resolve                          , ☁️.<Apps>--Amazon
+# - GEOSITE         , apple                                      , ☁️.<Apps>--Apple
 # - rule-set        , Apple_Domain                               , ☁️.<Apps>--Apple
 # - rule-set        , Apple_IP                                   , ☁️.<Apps>--Apple
 # - rule-set        , MicrosoftAPPs_Domain                       , ☁️.<Apps>--Microsoft
@@ -4451,6 +4452,9 @@
 #     geosite:anthropic:
 #     - https://cloudflare-dns.com/dns-query#💡.<AI>--Claude
 #     - https://dns.google/dns-query#💡.<AI>--Claude
+#     geosite:apple:
+#     - https://dns.alidns.com/dns-query#☁️.<Apps>--Apple
+#     - https://dns.google/dns-query#☁️.<Apps>--Apple
 #     geosite:apple-intelligence:
 #     - https://cloudflare-dns.com/dns-query#💡.<AI>--AppleAI
 #     - https://dns.google/dns-query#💡.<AI>--AppleAI
@@ -4481,6 +4485,9 @@
 #     geosite:clubhouse:
 #     - https://cloudflare-dns.com/dns-query#💛.<Social>--Clubhouse
 #     - https://dns.google/dns-query#💛.<Social>--Clubhouse
+#     geosite:cn:
+#     - https://dns.alidns.com/dns-query#🇨🇳.<Country>--CN
+#     - https://doh.pub/dns-query#🇨🇳.<Country>--CN
 #     geosite:discord:
 #     - https://cloudflare-dns.com/dns-query#💛.<Social>--Discord
 #     - https://dns.google/dns-query#💛.<Social>--Discord

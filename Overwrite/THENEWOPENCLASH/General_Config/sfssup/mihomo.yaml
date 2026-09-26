@@ -1,6 +1,6 @@
 # OpenClash 覆写模块 - mihomo.yaml
-# 生成日期：2026-07-21
-# 源文件：https://raw.githubusercontent.com/HenryChiao/MIHOMO_YAMLS/main/THEYAMLS/General_Config/sfssup/mihomo.yaml
+# 生成日期：2026-09-26
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/sfssup/mihomo.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -88,18 +88,21 @@
 #     exclude-type: http|ss
 #     health-check: &id001
 #       enable: true
-#       interval: 3600
+#       interval: 1800
+#       lazy: true
 #       timeout: 3000
 #       url: https://www.gstatic.com/generate_204
 #     interval: 86400
 #     override:
 #       additional-prefix: Miaona｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: &id002
 #         enabled: true
-#         max-connections: 9
-#         max-streams: 9
-#         min-streams: 5
+#         max-connections: 6
+#         max-streams: 6
+#         min-streams: 3
 #         only-tcp: false
 #         padding: true
 #         protocol: h2mux
@@ -118,6 +121,8 @@
 #     override:
 #       additional-prefix: 极速云｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: *id002
 #       tfo: true
 #       udp: true
@@ -125,21 +130,23 @@
 #     proxy: SubUpdate
 #     type: http
 #     url: https://w2.rouhe88.com/#/register?code=Zl5IqVKd
-#   淘气兔:
+#   良心云:
 #     exclude-filter: (?i)Russia
 #     exclude-type: http|ss
 #     health-check: *id001
 #     interval: 86400
 #     override:
-#       additional-prefix: 淘气兔｜
+#       additional-prefix: 良心云｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: *id002
 #       tfo: true
 #       udp: true
-#     path: ./proxy_providers/淘气兔.yaml
+#     path: ./proxy_providers/良心云.yaml
 #     proxy: SubUpdate
 #     type: http
-#     url: https://vip.xn--h5qy56dzhb.vip/#/register?code=rNh8X1zf
+#     url: https://xn--9kqz23b19z.com/#/register?code=VpXfaVUL
 #   顶级机场:
 #     exclude-filter: (?i)Russia
 #     exclude-type: http|ss
@@ -148,6 +155,8 @@
 #     override:
 #       additional-prefix: 顶级机场｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: *id002
 #       tfo: true
 #       udp: true
@@ -163,6 +172,8 @@
 #     override:
 #       additional-prefix: 飞鸟云｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: *id002
 #       tfo: true
 #       udp: true
@@ -178,6 +189,8 @@
 #     override:
 #       additional-prefix: 魔戒｜
 #       client-fingerprint: chrome
+#       ip-version: ipv4-prefer
+#       mptcp: true
 #       smux: *id002
 #       tfo: true
 #       udp: true
@@ -341,7 +354,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 香港-自动选择
@@ -353,7 +366,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 香港-故障转移
@@ -364,7 +377,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/hk.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 香港-负载均衡
@@ -381,7 +394,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 台湾-自动选择
@@ -393,7 +406,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 台湾-故障转移
@@ -404,7 +417,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/tw.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 台湾-负载均衡
@@ -421,7 +434,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 日本-自动选择
@@ -433,7 +446,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 日本-故障转移
@@ -444,7 +457,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/jp.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 日本-负载均衡
@@ -461,7 +474,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 韩国-自动选择
@@ -473,7 +486,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 韩国-故障转移
@@ -484,7 +497,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/kr.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 韩国-负载均衡
@@ -501,7 +514,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 新加坡-自动选择
@@ -513,7 +526,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 新加坡-故障转移
@@ -524,7 +537,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/sg.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 新加坡-负载均衡
@@ -541,7 +554,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 英国-自动选择
@@ -553,7 +566,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 英国-故障转移
@@ -564,7 +577,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/UK.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 英国-负载均衡
@@ -581,7 +594,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 美国-自动选择
@@ -593,7 +606,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 美国-故障转移
@@ -604,7 +617,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/us.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 美国-负载均衡
@@ -623,7 +636,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 其他-自动选择
@@ -636,7 +649,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 其他-故障转移
@@ -648,7 +661,7 @@
 #   hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/other.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 其他-负载均衡
@@ -663,7 +676,7 @@
 # - hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 全部-自动选择
@@ -674,7 +687,7 @@
 # - hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 全部-故障转移
@@ -684,7 +697,7 @@
 # - hidden: true
 #   icon: https://raw.githubusercontent.com/Sfssup/mihomo-set/main/icon/all.svg
 #   include-all-providers: true
-#   interval: 1800
+#   interval: 600
 #   lazy: true
 #   max-failed-times: 3
 #   name: 全部-负载均衡
@@ -722,6 +735,13 @@
 #     path: ./rule_set/category-ai-!cn.mrs
 #     type: http
 #     url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs
+#   anti-AD:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     path: ./rule_set/anti-AD.mrs
+#     type: http
+#     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-ad.github.io/master/docs/mihomo.mrs
 #   apple:
 #     behavior: domain
 #     format: mrs
@@ -931,11 +951,13 @@
 # ==========================================================
 #
 # rules:
+# - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),Block
 # - DST-PORT,53,🌐 DNS劫持
 # - RULE-SET,private,🇨🇳 直连
 # - RULE-SET,httpdns,Block
 # - RULE-SET,ads,Block
 # - RULE-SET,AWAvenue,Block
+# - RULE-SET,anti-AD,Block
 # - RULE-SET,googlefcm,Google FCM
 # - RULE-SET,telegram,Telegram
 # - RULE-SET,github,Github
@@ -976,23 +998,36 @@
 # dns:
 #   cache-algorithm: arc
 #   default-nameserver:
-#   - https://223.5.5.5/dns-query
-#   - https://119.29.29.29/dns-query
+#   - 223.5.5.5
+#   - 120.53.53.53
 #   direct-nameserver:
-#   - https://223.5.5.5/dns-query
-#   - https://1.12.12.12/dns-query
+#   - https://223.5.5.5/dns-query#disable-qtype-65=true
+#   - https://119.29.29.29/dns-query#disable-qtype-65=true
 #   direct-nameserver-follow-policy: false
-#   disable-qtype-65: true
 #   enable: true
 #   enhanced-mode: fake-ip
 #   fake-ip-filter:
-#   - DOMAIN,localhost,real-ip
-#   - DOMAIN-SUFFIX,lan,real-ip
-#   - DOMAIN-SUFFIX,local,real-ip
-#   - RULE-SET,private,real-ip
-#   - RULE-SET,cn,real-ip
-#   - MATCH,fake-ip
-#   fake-ip-filter-mode: rule
+#   - localhost
+#   - '*.lan'
+#   - '*.local'
+#   - '*.arpa'
+#   - time.apple.com
+#   - +.pool.ntp.org
+#   - +.msftconnecttest.com
+#   - +.msftncsi.com
+#   - +.pub.3gppnetwork.org
+#   - localhost.ptlogin2.qq.com
+#   - localhost.sec.qq.com
+#   - localhost.*.weixin.qq.com
+#   - id6.me
+#   - open.e.189.cn
+#   - hmrz.wo.cn
+#   - nishub1.10010.com
+#   - enrichgw.10010.com
+#   - '*.cmpassport.com'
+#   - '*.wosms.cn'
+#   - rule-set:private
+#   fake-ip-filter-mode: blacklist
 #   fake-ip-range: 198.18.0.0/15
 #   fake-ip-range6: fc00::/18
 #   fake-ip-ttl: 60
@@ -1000,14 +1035,14 @@
 #   ipv6-timeout: 3000
 #   listen: 0.0.0.0:1053
 #   nameserver:
-#   - https://8.8.8.8/dns-query
-#   - https://1.1.1.1/dns-query
+#   - https://8.8.8.8/dns-query#disable-qtype-65=true
+#   - https://1.1.1.1/dns-query#disable-qtype-65=true
 #   nameserver-policy:
-#     +.arpa: 10.0.0.1
+#     rule-set:httpdns,ads,AWAvenue,anti-AD: rcode://success
 #   prefer-h3: false
 #   proxy-server-nameserver:
-#   - https://223.6.6.6/dns-query
-#   - https://120.53.53.53/dns-query
+#   - https://223.6.6.6/dns-query#disable-qtype-65=true
+#   - https://1.12.12.12/dns-query#disable-qtype-65=true
 #   respect-rules: true
 #   use-hosts: true
 #   use-system-hosts: true

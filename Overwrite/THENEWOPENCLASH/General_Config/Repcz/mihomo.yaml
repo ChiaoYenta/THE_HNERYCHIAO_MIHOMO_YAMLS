@@ -1,6 +1,6 @@
-# OpenClash 覆写模块 - config.yaml
+# OpenClash 覆写模块 - mihomo.yaml
 # 生成日期：2026-09-26
-# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/Mobile_Modules/ClashMix/config.yaml
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/Repcz/mihomo.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -83,30 +83,15 @@
 # ==========================================================
 #
 # proxy-providers:
-#   机场1:
-#     health-check: &id001
+#   Sub:
+#     health-check:
 #       enable: true
-#       expected-status: 204
-#       interval: 3600
-#       lazy: true
-#       timeout: 3000
-#       url: https://www.gstatic.com/generate_204
-#     interval: 21600
-#     path: ./proxy_providers/机场1.yaml
+#       interval: 1800
+#       timeout: 5000
+#       url: http://1.1.1.1/generate_204
+#     interval: 86400
 #     type: http
-#     url: 订阅链接
-#   机场2:
-#     health-check: *id001
-#     interval: 21600
-#     path: ./proxy_providers/机场2.yaml
-#     type: http
-#     url: 订阅链接
-#   机场3:
-#     health-check: *id001
-#     interval: 21600
-#     path: ./proxy_providers/机场3.yaml
-#     type: http
-#     url: 订阅链接
+#     url: http://your-service-provider
 
 # ==========================================================
 # proxy-groups（从源文件直接提取）
@@ -117,49 +102,42 @@
 # ==========================================================
 #
 # proxy-groups:
-# - name: 代理
+# - icon: https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/applesafari.png
+#   name: Proxy
 #   proxies:
-#   - 手动选择
-#   - 全部节点
-#   - 自动切换
-#   - 智能选择
+#   - Fallback
 #   type: select
-# - filter: 美国|USA|美國|us|US|United States
-#   include-all: true
-#   name: 手动选择
+#   use:
+#   - Sub
+# - icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
+#   name: AI
+#   proxies:
+#   - Proxy
+#   - Fallback
 #   type: select
-# - include-all: true
-#   name: 全部节点
+#   use:
+#   - Sub
+# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+#   name: Telegram
+#   proxies:
+#   - Proxy
+#   - Fallback
 #   type: select
-# - expected-status: 204
-#   filter: 美国|USA|美國|us|US|United States
-#   include-all: true
-#   interval: 300
-#   lazy: true
-#   max-failed-times: 5
-#   name: 自动切换
-#   timeout: 3000
+#   use:
+#   - Sub
+# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
+#   name: Fallback
 #   type: fallback
-#   url: https://www.gstatic.com/generate_204
-# - collectdata: false
-#   filter: 美国|USA|美國|us|US|United States
-#   include-all: true
-#   name: 智能选择
-#   policy-priority: IEPL:1.5
-#   prefer-asn: false
-#   strategy: sticky-sessions
-#   type: smart
-#   uselightgbm: true
-# - name: 广告
+#   use:
+#   - Sub
+# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+#   name: Final
 #   proxies:
-#   - REJECT-DROP
-#   - PASS
+#   - Proxy
+#   - Fallback
 #   type: select
-# - name: 中国网站
-#   proxies:
-#   - DIRECT
-#   - 代理
-#   type: select
+#   use:
+#   - Sub
 
 # ==========================================================
 # rule-providers（从源文件直接提取）
@@ -169,56 +147,66 @@
 # ==========================================================
 #
 # rule-providers:
-#   Fake-IP-Filter:
-#     behavior: domain
-#     format: mrs
-#     interval: 86400
-#     path: ./rule_providers/Fake-IP-Filter.mrs
-#     type: http
-#     url: https://github.com/DustinWin/ruleset_geodata/raw/refs/heads/mihomo-ruleset/fakeip-filter.mrs
-#   GoogleFCM:
-#     behavior: classical
-#     format: yaml
-#     interval: 86400
-#     path: ./rule_providers/GoogleFCM.yaml
-#     type: http
-#     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleFCM/GoogleFCM.yaml
-#   中国IP:
-#     behavior: ipcidr
-#     format: mrs
-#     interval: 86400
-#     path: ./rule_providers/中国IP.mrs
-#     type: http
-#     url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo-lite/geoip/cn.mrs
-#   中国域名:
-#     behavior: domain
-#     format: yaml
-#     interval: 86400
-#     path: ./rule_providers/中国域名.yaml
-#     type: http
-#     url: https://cdn.jsdelivr.net/gh/Accademia/Additional_Rule_For_Clash@latest/China/China_Domain.yaml
-#   私有地址:
+#   AI:
 #     behavior: classical
 #     format: text
 #     interval: 86400
-#     path: ./rule_providers/私有地址.txt
 #     type: http
-#     url: https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/meta/private.list
-#   秋风广告规则:
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list
+#   Direct:
 #     behavior: classical
-#     format: yaml
+#     format: text
 #     interval: 86400
-#     path: ./rule_providers/AWAvenue-Ads-Rule-Clash.yaml
 #     type: http
-#     url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/refs/heads/main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
-#   自定义代理:
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Direct.list
+#   Github:
 #     behavior: classical
-#     path: ./rule_providers/userProxy.yaml
-#     type: file
-#   自定义直连:
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Github.list
+#   Google:
 #     behavior: classical
-#     path: ./rule_providers/userDirect.yaml
-#     type: file
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list
+#   Lan:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Lan.list
+#   Microsoft:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Microsoft.list
+#   Proxy:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list
+#   Reject:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list
+#   Telegram:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list
+#   Twitter:
+#     behavior: classical
+#     format: text
+#     interval: 86400
+#     type: http
+#     url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list
 
 # ==========================================================
 # rules（从源文件直接提取）
@@ -232,14 +220,18 @@
 # ==========================================================
 #
 # rules:
-# - RULE-SET,自定义代理,代理
-# - RULE-SET,自定义直连,中国网站
-# - RULE-SET,私有地址,DIRECT
-# - RULE-SET,GoogleFCM,中国网站
-# - RULE-SET,秋风广告规则,广告
-# - RULE-SET,中国域名,中国网站
-# - RULE-SET,中国IP,中国网站
-# - MATCH,代理
+# - RULE-SET,Direct,DIRECT
+# - RULE-SET,Reject,REJECT
+# - RULE-SET,AI,AI
+# - RULE-SET,Telegram,Telegram
+# - RULE-SET,Twitter,Fallback
+# - RULE-SET,Google,Fallback
+# - RULE-SET,Github,Fallback
+# - RULE-SET,Microsoft,Fallback
+# - RULE-SET,Proxy,Proxy
+# - RULE-SET,Lan,DIRECT
+# - GEOIP,CN,DIRECT
+# - MATCH,Final
 
 # ==========================================================
 # dns（从源文件直接提取）
@@ -250,25 +242,28 @@
 # ==========================================================
 #
 # dns:
+#   default-nameserver:
+#   - 223.5.5.5
+#   - 119.29.29.29
 #   enable: true
 #   enhanced-mode: fake-ip
 #   fake-ip-filter:
-#   - RULE-SET:自定义直连
-#   - RULE-SET:Fake-IP-Filter
-#   - RULE-SET:私有地址
-#   ipv6: true
-#   ipv6-timeout: 300
+#   - +.lan
+#   - '*'
+#   - +.local
+#   - +.cmpassport.com
+#   - id6.me
+#   - open.e.189.cn
+#   - mdn.open.wo.cn
+#   - opencloud.wostore.cn
+#   - auth.wosms.cn
+#   - +.10099.com.cn
+#   - +.msftconnecttest.com
+#   - +.msftncsi.com
+#   - lancache.steamcontent.com
+#   fake-ip-range: 198.18.0.1/16
+#   ipv6: false
+#   listen: :1053
 #   nameserver:
-#   - 1.1.1.1#代理
-#   - 8.8.8.8#代理
-#   nameserver-policy:
-#     rule-set:自定义代理:
-#     - 1.1.1.1#代理
-#     - 8.8.8.8#代理
-#     rule-set:自定义直连,中国域名,私有地址,GoogleFCM:
-#     - 223.5.5.5#中国网站
-#     - 119.29.29.29#中国网站
-#   proxy-server-nameserver:
-#   - 223.5.5.5#中国网站
-#   - 119.29.29.29#中国网站
-#   proxy-server-nameserver-policy: null
+#   - https://doh.pub/dns-query
+#   - https://dns.alidns.com/dns-query

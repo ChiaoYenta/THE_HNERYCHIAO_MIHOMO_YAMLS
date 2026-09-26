@@ -1,0 +1,649 @@
+# OpenClash 覆写模块 - region-dual-provider.yaml
+# 生成日期：2026-09-26
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/From_clash_by_hako/region-dual-provider.yaml
+# 格式：新版 OpenClash [YAML] 块覆写
+#
+# 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
+# 所有内容默认注释，不影响现有配置；取消注释对应段落即可启用该覆写。
+# ==========================================================
+# [YAML] 是新版 OpenClash 覆写模块的识别标记
+# 此行本身不可注释，内容写在此标记之后
+# 注释状态不生效；取消注释后重载覆写模块即可生效
+# ==========================================================
+[YAML]
+
+# ==========================================================
+# 操作符速查
+# ----------------------------------------------------------
+#  key       默认合并：Hash 递归合并，其他类型直接覆盖原值
+#  key!      强制覆盖：整个值全部替换，不做任何合并
+#  key+      数组后置追加：在数组末尾加入新元素
+#  +key      数组前置插入：在数组开头插入（规则越靠前越优先匹配）
+#  key-      数组差集删除：从数组移除指定元素；非数组则删除该键
+#  key*      批量条件更新：配合 where/set，按条件匹配后批量修改
+# ==========================================================
+
+# ==========================================================
+# 示例：追加自定义 rule-provider 并在规则末尾加入对应规则
+# 取消注释后，Steam 流量将走 Proxy 策略组
+# ----------------------------------------------------------
+# +rule-providers:
+#   Steam:
+#     type: http
+#     behavior: domain
+#     format: mrs
+#     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"
+#     interval: 86400
+# +rules:
+#   - RULE-SET,Steam,Proxy
+# ==========================================================
+
+# ==========================================================
+# 示例：在规则列表最前面插入高优先级规则（最先匹配）
+# ----------------------------------------------------------
+# +rules:
+#   - DOMAIN-SUFFIX,example.com,DIRECT
+#   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+# ==========================================================
+
+# ==========================================================
+# 示例：强制替换整个 rules 数组（原有规则全部丢弃）
+# ----------------------------------------------------------
+# rules!:
+#   - DOMAIN-SUFFIX,example.com,DIRECT
+#   - MATCH,PROXY
+# ==========================================================
+
+# ==========================================================
+# 示例：修改 dns 配置中的部分字段，其余字段保持不变
+# ----------------------------------------------------------
+# dns:
+#   enable: true
+#   cache-algorithm: lru
+# ==========================================================
+
+# ==========================================================
+# 示例：给所有 url-test 类型的策略组在 proxies 末尾追加节点
+# ----------------------------------------------------------
+# proxy-groups*:
+#   where:
+#     type: url-test
+#   set:
+#     proxies+:
+#       - '节点名称'
+# ==========================================================
+
+# ==========================================================
+# proxy-providers（从源文件直接提取）
+# ----------------------------------------------------------
+# 以下内容原样复制自源 YAML 的 proxy-providers 块。
+# 使用方法：
+#   1. 将需要替换的 provider 的 url: 改为你自己的订阅链接
+#   2. 删除这整块前面的 # 号，保存后重载覆写模块即可
+# ==========================================================
+#
+# proxy-providers:
+#   Backup-VPS:
+#     interval: 600
+#     type: http
+#     url: ''
+#   Primary-VPS:
+#     interval: 600
+#     type: http
+#     url: ''
+
+# ==========================================================
+# proxy-groups（从源文件直接提取）
+# ----------------------------------------------------------
+# 原始策略组配置，默认注释不启用。
+# 如需覆写策略组，可取消注释后修改，或参考上方示例使用 proxy-groups* 条件更新。
+# 直接取消注释将强制替换整个 proxy-groups（等同于 proxy-groups! 操作）。
+# ==========================================================
+#
+# proxy-groups:
+# - icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+#   name: PROXY-Gate
+#   proxies:
+#   - 🔘 Primary-Manual
+#   - 🔘 Backup-Manual
+#   - 🌍 Other-Manual
+#   - 🇺🇸 US-Fallback
+#   - 🇸🇬 SG-Fallback
+#   - 🇭🇰 HK-Fallback
+#   - 🇯🇵 JP-Fallback
+#   - 🇹🇼 TW-Fallback
+#   - DIRECT
+#   type: select
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
+#   interval: 300
+#   name: Apple Push
+#   proxies:
+#   - APNs-Fallback
+#   - DIRECT
+#   type: fallback
+#   url: http://captive.apple.com/hotspot-detect.html
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Server.png
+#   name: 🔘 Primary-Manual
+#   type: select
+#   use:
+#   - Primary-VPS
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Server.png
+#   name: 🔘 Backup-Manual
+#   type: select
+#   use:
+#   - Backup-VPS
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+#   name: 🌍 Other-Manual
+#   proxies:
+#   - 🇬🇧 UK-Fallback
+#   - 🇩🇪 DE-Fallback
+#   - 🇫🇷 FR-Fallback
+#   - 🇳🇱 NL-Fallback
+#   type: select
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/United_States.png
+#   interval: 600
+#   name: 🇺🇸 US-Fallback
+#   proxies:
+#   - ⚙️ 🇺🇸 Primary-US-Auto
+#   - ⚙️ 🇺🇸 Backup-US-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Singapore.png
+#   interval: 900
+#   name: 🇸🇬 SG-Fallback
+#   proxies:
+#   - ⚙️ 🇸🇬 Primary-SG-Auto
+#   - ⚙️ 🇸🇬 Backup-SG-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hong_Kong.png
+#   interval: 900
+#   name: 🇭🇰 HK-Fallback
+#   proxies:
+#   - ⚙️ 🇭🇰 Primary-HK-Auto
+#   - ⚙️ 🇭🇰 Backup-HK-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Japan.png
+#   interval: 900
+#   name: 🇯🇵 JP-Fallback
+#   proxies:
+#   - ⚙️ 🇯🇵 Primary-JP-Auto
+#   - ⚙️ 🇯🇵 Backup-JP-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Taiwan.png
+#   interval: 900
+#   name: 🇹🇼 TW-Fallback
+#   proxies:
+#   - ⚙️ 🇹🇼 Primary-TW-Auto
+#   - ⚙️ 🇹🇼 Backup-TW-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+#   interval: 900
+#   name: 🇬🇧 UK-Fallback
+#   proxies:
+#   - ⚙️ 🇬🇧 Primary-UK-Auto
+#   - ⚙️ 🇬🇧 Backup-UK-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+#   interval: 900
+#   name: 🇩🇪 DE-Fallback
+#   proxies:
+#   - ⚙️ 🇩🇪 Primary-DE-Auto
+#   - ⚙️ 🇩🇪 Backup-DE-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+#   interval: 900
+#   name: 🇫🇷 FR-Fallback
+#   proxies:
+#   - ⚙️ 🇫🇷 Primary-FR-Auto
+#   - ⚙️ 🇫🇷 Backup-FR-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Global.png
+#   interval: 900
+#   name: 🇳🇱 NL-Fallback
+#   proxies:
+#   - ⚙️ 🇳🇱 Primary-NL-Auto
+#   - ⚙️ 🇳🇱 Backup-NL-Auto
+#   timeout: 15
+#   type: fallback
+#   url: http://www.gstatic.com/generate_204
+# - exclude-filter: (?i)^(Apple Push|APNs-Fallback)$
+#   icon: https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Apple.png
+#   include-all: true
+#   interval: 300
+#   name: APNs-Fallback
+#   type: fallback
+#   url: http://captive.apple.com/hotspot-detect.html
+# - filter: (?i)(\[US\]|^US$|USA|United States|\bUS\b|美国)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 600
+#   name: ⚙️ 🇺🇸 Primary-US-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[US\]|^US$|USA|United States|\bUS\b|美国)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 600
+#   name: ⚙️ 🇺🇸 Backup-US-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[SG\]|^SG$|Singapore|\bSG\b|新加坡|狮城)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇸🇬 Primary-SG-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[SG\]|^SG$|Singapore|\bSG\b|新加坡|狮城)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇸🇬 Backup-SG-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[HK\]|^HK$|Hong Kong|\bHK\b|香港|🇨🇳香港)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇭🇰 Primary-HK-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[HK\]|^HK$|Hong Kong|\bHK\b|香港|🇨🇳香港)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇭🇰 Backup-HK-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[JP\]|^JP$|Japan|\bJP\b|日本|东京|大阪|🇯🇵日本)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇯🇵 Primary-JP-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[JP\]|^JP$|Japan|\bJP\b|日本|东京|大阪|🇯🇵日本)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇯🇵 Backup-JP-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[TW\]|^TW$|Taiwan|台湾|台北|高雄|Taipei|Kaohsiung|🇹🇼台湾)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇹🇼 Primary-TW-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[TW\]|^TW$|Taiwan|台湾|台北|高雄|Taipei|Kaohsiung|🇹🇼台湾)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇹🇼 Backup-TW-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(?!.*Ukraine)(\[UK\]|^UK$|United Kingdom|Britain|\bUK\b|英国|伦敦)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇬🇧 Primary-UK-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(?!.*Ukraine)(\[UK\]|^UK$|United Kingdom|Britain|\bUK\b|英国|伦敦)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇬🇧 Backup-UK-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[DE\]|^DE$|Germany|Deutschland|\bDE\b|德国|法兰克福)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇩🇪 Primary-DE-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[DE\]|^DE$|Germany|Deutschland|\bDE\b|德国|法兰克福)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇩🇪 Backup-DE-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[FR\]|^FR$|France|\bFR\b|法国|巴黎)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇫🇷 Primary-FR-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[FR\]|^FR$|France|\bFR\b|法国|巴黎)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇫🇷 Backup-FR-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+# - filter: (?i)(\[NL\]|^NL$|Netherlands|Holland|\bNL\b|荷兰|阿姆斯特丹|Amsterdam)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇳🇱 Primary-NL-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Primary-VPS
+# - filter: (?i)(\[NL\]|^NL$|Netherlands|Holland|\bNL\b|荷兰|阿姆斯特丹|Amsterdam)
+#   icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+#   interval: 900
+#   name: ⚙️ 🇳🇱 Backup-NL-Auto
+#   timeout: 15
+#   tolerance: 50
+#   type: url-test
+#   url: http://www.gstatic.com/generate_204
+#   use:
+#   - Backup-VPS
+
+# ==========================================================
+# rule-providers（从源文件直接提取）
+# ----------------------------------------------------------
+# 原始规则集配置，默认注释不启用。
+# 如需追加新的 rule-provider，参考上方示例一使用 +rule-providers: 操作符。
+# ==========================================================
+#
+# rule-providers:
+#   ACL4SSR_BanAD:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/mrs/BanAD_domain.mrs
+#   ACL4SSR_BanProgramAD:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/mrs/BanProgramAD_domain.mrs
+#   AdvertisingLite:
+#     behavior: classical
+#     format: yaml
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/AdvertisingLite/AdvertisingLite.yaml
+#   AdvertisingLite_Domain:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/Sydney-Moses/Network-Profiles/refs/heads/main/MRS/AdvertisingLite_Domain.mrs
+#   Apple:
+#     behavior: classical
+#     format: yaml
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+#   Apple_Domain:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/Sydney-Moses/Network-Profiles/refs/heads/main/MRS/Apple_Domain.mrs
+#   ChinaMax:
+#     behavior: classical
+#     format: yaml
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/ChinaMax/ChinaMax.yaml
+#   ChinaMax_Domain:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/Sydney-Moses/Network-Profiles/refs/heads/main/MRS/ChinaMax_Domain.mrs
+#   ChinaMax_IP:
+#     behavior: ipcidr
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/Sydney-Moses/Network-Profiles/refs/heads/main/MRS/ChinaMax_IP.mrs
+#   Privacy:
+#     behavior: classical
+#     format: yaml
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Privacy/Privacy.yaml
+#   Privacy_Domain:
+#     behavior: domain
+#     format: mrs
+#     interval: 86400
+#     type: http
+#     url: https://raw.githubusercontent.com/Sydney-Moses/Network-Profiles/refs/heads/main/MRS/Privacy_Domain.mrs
+
+# ==========================================================
+# rules（从源文件直接提取）
+# ----------------------------------------------------------
+# 原始规则列表，默认注释不启用。
+# 常用操作：
+#   +rules: [...]   在规则列表开头插入（优先匹配）
+#   rules+: [...]   在规则列表末尾追加
+#   rules!: [...]   强制替换整个规则列表（丢弃原有规则）
+# 参考上方示例，通常不需要取消注释整个 rules，而是用 +rules/rules+ 追加即可。
+# ==========================================================
+#
+# rules:
+# - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+# - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+# - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+# - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+# - GEOIP,LAN,DIRECT,no-resolve
+# - DOMAIN-SUFFIX,push.apple.com,Apple Push
+# - DOMAIN-SUFFIX,push-apple.com.akadns.net,Apple Push
+# - DOMAIN-KEYWORD,apple.com.edgekey.net,Apple Push
+# - IP-CIDR,17.249.0.0/16,Apple Push,no-resolve
+# - IP-CIDR,17.252.0.0/16,Apple Push,no-resolve
+# - IP-CIDR,17.57.144.0/22,Apple Push,no-resolve
+# - IP-CIDR,17.188.128.0/18,Apple Push,no-resolve
+# - IP-CIDR,17.188.20.0/23,Apple Push,no-resolve
+# - IP-CIDR6,2620:149:a44::/48,Apple Push,no-resolve
+# - IP-CIDR6,2403:300:a42::/48,Apple Push,no-resolve
+# - IP-CIDR6,2403:300:a51::/48,Apple Push,no-resolve
+# - IP-CIDR6,2a01:b740:a42::/48,Apple Push,no-resolve
+# - DOMAIN-SUFFIX,github.com,PROXY-Gate
+# - DOMAIN-SUFFIX,githubusercontent.com,PROXY-Gate
+# - DOMAIN-SUFFIX,githubassets.com,PROXY-Gate
+# - DOMAIN-SUFFIX,raw.githubusercontent.com,PROXY-Gate
+# - RULE-SET,Apple,DIRECT
+# - RULE-SET,Apple_Domain,DIRECT
+# - RULE-SET,AdvertisingLite,REJECT
+# - RULE-SET,AdvertisingLite_Domain,REJECT
+# - RULE-SET,Privacy,REJECT
+# - RULE-SET,Privacy_Domain,REJECT
+# - RULE-SET,ACL4SSR_BanAD,REJECT
+# - RULE-SET,ACL4SSR_BanProgramAD,REJECT
+# - DOMAIN-KEYWORD,openai,PROXY-Gate
+# - DOMAIN-KEYWORD,chatgpt,PROXY-Gate
+# - DOMAIN-SUFFIX,auth0.com,PROXY-Gate
+# - DOMAIN-SUFFIX,identrust.com,PROXY-Gate
+# - DOMAIN-SUFFIX,oaistatic.com,PROXY-Gate
+# - DOMAIN-SUFFIX,oaiusercontent.com,PROXY-Gate
+# - DOMAIN-SUFFIX,anthropic.com,PROXY-Gate
+# - DOMAIN-SUFFIX,claude.ai,PROXY-Gate
+# - DOMAIN-SUFFIX,deepmind.com,PROXY-Gate
+# - DOMAIN-SUFFIX,gemini.google.com,PROXY-Gate
+# - DOMAIN-KEYWORD,copilot,PROXY-Gate
+# - DOMAIN-SUFFIX,designer.microsoft.com,PROXY-Gate
+# - DOMAIN-SUFFIX,copilot.microsoft.com,PROXY-Gate
+# - DOMAIN-SUFFIX,ai.microsoft.com,PROXY-Gate
+# - DOMAIN,onedrive.live.com,PROXY-Gate
+# - DOMAIN-SUFFIX,1drv.com,PROXY-Gate
+# - DOMAIN-KEYWORD,google,PROXY-Gate
+# - DOMAIN-SUFFIX,gmail.com,PROXY-Gate
+# - DOMAIN-SUFFIX,googlevideo.com,PROXY-Gate
+# - DOMAIN-SUFFIX,youtube.com,PROXY-Gate
+# - DOMAIN-SUFFIX,ytimg.com,PROXY-Gate
+# - DOMAIN-SUFFIX,ggpht.com,PROXY-Gate
+# - DOMAIN-SUFFIX,telegram.org,PROXY-Gate
+# - DOMAIN-SUFFIX,telegram.me,PROXY-Gate
+# - DOMAIN-SUFFIX,t.me,PROXY-Gate
+# - DOMAIN-SUFFIX,tdesktop.com,PROXY-Gate
+# - IP-CIDR,91.108.4.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,91.108.8.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,91.108.12.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,91.108.16.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,91.108.20.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,91.108.56.0/22,PROXY-Gate,no-resolve
+# - IP-CIDR,149.154.160.0/20,PROXY-Gate,no-resolve
+# - IP-CIDR6,2001:b28:f23d::/48,PROXY-Gate,no-resolve
+# - IP-CIDR6,2001:b28:f23f::/48,PROXY-Gate,no-resolve
+# - IP-CIDR6,2001:67c:4e8::/48,PROXY-Gate,no-resolve
+# - DOMAIN-KEYWORD,tiktok,PROXY-Gate
+# - DOMAIN-KEYWORD,tiktokcdn,PROXY-Gate
+# - DOMAIN-KEYWORD,tiktokv,PROXY-Gate
+# - RULE-SET,ChinaMax,DIRECT
+# - RULE-SET,ChinaMax_Domain,DIRECT
+# - RULE-SET,ChinaMax_IP,DIRECT
+# - GEOSITE,CN,DIRECT
+# - GEOIP,CN,DIRECT,no-resolve
+# - MATCH,PROXY-Gate
+
+# ==========================================================
+# dns（从源文件直接提取）
+# ----------------------------------------------------------
+# 原始 DNS 配置，默认注释不启用。
+# 如只需修改部分字段，直接写需要修改的键值即可（默认合并，不影响其他字段）。
+# 如需完整替换 DNS 配置，使用 dns!: 操作符。
+# ==========================================================
+#
+# dns:
+#   default-nameserver:
+#   - 223.5.5.5
+#   - 119.29.29.29
+#   - 2400:3200::1
+#   direct-nameserver:
+#   - https://dns.alidns.com/dns-query
+#   - https://doh.pub/dns-query
+#   enable: true
+#   enhanced-mode: fake-ip
+#   fake-ip-filter:
+#   - '*.lan'
+#   - '*.local'
+#   - localhost
+#   - '*.msftconnecttest.com'
+#   - '*.msftncsi.com'
+#   - '*.msidentity.com'
+#   - captive.apple.com
+#   - '*.push.apple.com'
+#   - stun.*
+#   - +.stun.*.*
+#   - +.stun.*.*.*
+#   - +.stun.*.*.*.*
+#   - +.stun.*.*.*.*.*
+#   - +.weixin.com
+#   - +.wechat.com
+#   - +.qq.com
+#   - +.tencent.com
+#   - speedtest.net
+#   fake-ip-range: 198.18.0.1/16
+#   fallback:
+#   - https://anycast.uncensoreddns.org/dns-query
+#   fallback-filter:
+#     geoip: true
+#     geoip-code: CN
+#     ipcidr:
+#     - 240.0.0.0/4
+#     - 127.0.0.0/8
+#     - 0.0.0.0/32
+#   ipv6: true
+#   nameserver:
+#   - https://dns.cloudflare.com/dns-query
+#   - https://dns.google/dns-query
+#   nameserver-policy:
+#     dns.alidns.com:
+#     - 223.5.5.5
+#     - 223.6.6.6
+#     dns.cloudflare.com:
+#     - 1.1.1.1
+#     - 1.0.0.1
+#     dns.google:
+#     - 8.8.8.8
+#     - 8.8.4.4
+#     dns.quad9.net:
+#     - 9.9.9.9
+#     - 149.112.112.112
+#     doh.pub:
+#     - 1.12.12.12
+#     - 120.53.53.53
+#     geosite:cn:
+#     - https://dns.alidns.com/dns-query
+#     - https://doh.pub/dns-query
+#   prefer-h3: false
+#   proxy-server-nameserver:
+#   - https://dns.alidns.com/dns-query
+#   - https://doh.pub/dns-query
+#   proxy-server-nameserver-policy: null
+#   respect-rules: true

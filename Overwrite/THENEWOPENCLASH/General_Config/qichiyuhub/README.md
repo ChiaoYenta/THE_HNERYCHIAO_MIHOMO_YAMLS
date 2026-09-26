@@ -4,7 +4,8 @@
 
 | 文件名 | proxy-providers | Raw 链接 |
 | :--- | :--- | :--- |
-| **config.yaml** | Airport1 | [下载/查看](https://raw.githubusercontent.com/HenryChiao/MIHOMO_YAMLS/main/Overwrite/THENEWOPENCLASH/General_Config/qichiyuhub/config.yaml) |
+| **config.yaml** | Airport1 | [下载/查看](https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/Overwrite/THENEWOPENCLASH/General_Config/qichiyuhub/config.yaml) |
+| **proxychain.yaml** | Airport1 | [下载/查看](https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/Overwrite/THENEWOPENCLASH/General_Config/qichiyuhub/proxychain.yaml) |
 
 ---
 [🔙 返回总览](../README.md)

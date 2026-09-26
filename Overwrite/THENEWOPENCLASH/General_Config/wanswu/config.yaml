@@ -1,6 +1,6 @@
 # OpenClash 覆写模块 - config.yaml
-# 生成日期：2026-07-21
-# 源文件：https://raw.githubusercontent.com/HenryChiao/MIHOMO_YAMLS/main/THEYAMLS/General_Config/wanswu/config.yaml
+# 生成日期：2026-09-26
+# 源文件：https://raw.githubusercontent.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/main/THEYAMLS/General_Config/wanswu/config.yaml
 # 格式：新版 OpenClash [YAML] 块覆写
 #
 # 本文件仅包含 [YAML] 块覆写内容，不含任何 [General] 插件设置。
@@ -94,7 +94,6 @@
 #       additional-prefix: 备-6-
 #       udp: true
 #     path: proxy_provider/back.yaml
-#     proxy: DIRECT
 #     type: file
 #   main:
 #     exclude-filter: Expire|到期|剩余|Traffic|网址|官网|过期|地址
@@ -112,7 +111,6 @@
 #       additional-prefix: 主-
 #       udp: true
 #     path: ./proxy_provider/main.yaml
-#     proxy: DIRECT
 #     type: http
 #     url: https://anyland.club/#/register?code=R7vdKxbE
 
@@ -165,8 +163,7 @@
 #   hidden: false
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 家宽选择
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -424,8 +421,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 香港自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -433,8 +429,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 台湾自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -442,8 +437,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 狮城自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -451,8 +445,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 日本自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -460,8 +453,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 韩国自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -470,8 +462,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 美国自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -479,8 +470,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 英国自动
 #   type: url-test
 #   url: https://www.gstatic.com/generate_204
@@ -488,8 +478,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 香港-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -497,8 +486,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 台湾-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -506,8 +494,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 狮城-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -515,8 +502,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 日本-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -524,8 +510,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 韩国-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -534,8 +519,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 美国-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -543,8 +527,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 英国-回退
 #   type: fallback
 #   url: https://www.gstatic.com/generate_204
@@ -552,8 +535,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 香港均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -562,8 +544,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 台湾均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -572,8 +553,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 狮城均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -582,8 +562,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 日本均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -592,8 +571,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 韩国均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -603,8 +581,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 美国均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -613,8 +590,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 英国均衡-散列
 #   strategy: consistent-hashing
 #   type: load-balance
@@ -623,8 +599,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Hong_Kong.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 香港均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -633,8 +608,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Taiwan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 台湾均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -643,8 +617,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Singapore.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 狮城均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -653,8 +626,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Japan.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 日本均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -663,8 +635,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/Korea.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 韩国均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -674,8 +645,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_States.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 美国均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -684,8 +654,7 @@
 #   hidden: true
 #   icon: https://fastly.jsdelivr.net/gh/0xWans/Qure@master/IconSet/Color/United_Kingdom.png
 #   include-all: true
-#   interval: 300
-#   lazy: true
+#   interval: 600
 #   name: 英国均衡-轮询
 #   strategy: round-robin
 #   type: load-balance
@@ -947,7 +916,7 @@
 # - RULE-SET,Lan,DIRECT
 # - RULE-SET,China,DIRECT
 # - RULE-SET,LanIP,DIRECT,no-resolve
-# - RULE-SET,ChinaIP,DIRECT,no-resolve
+# - RULE-SET,ChinaIP,DIRECT
 # - RULE-SET,GoogleIP,Google,no-resolve
 # - RULE-SET,TelegramIP,Telegram,no-resolve
 # - RULE-SET,TwitterIP,Twitter(X),no-resolve
@@ -978,7 +947,6 @@
 #   - https://dns.cloudflare.com/dns-query#ecs=1.1.1.1/24&ecs-override=true
 #   - https://dns.google/dns-query#ecs=1.1.1.1/24&ecs-override=true
 #   ipv6: true
-#   listen: 0.0.0.0:1053
 #   nameserver:
 #   - https://dns.adguard-dns.com/dns-query#ecs=1.1.1.1/24&ecs-override=true
 #   - https://dns.cloudflare.com/dns-query#ecs=1.1.1.1/24&ecs-override=true
@@ -992,10 +960,10 @@
 #   - https://dns.alidns.com/dns-query#ecs=223.5.5.5/24&ecs-override=true
 #   - https://doh.pub/dns-query#ecs=223.5.5.5/24&ecs-override=true
 #   proxy-server-nameserver-policy:
-#     '*.digital-nvme.com':
-#     - 8.138.94.132:8053
-#     '*.yunsmartdns.com':
-#     - 8.138.94.132:8053
+#     '*.llguanglisf.com':
+#     - https://appdsv1.apiv2.a047.com/api-v2
+#     - https://appdsv1.web.ak005.com/api-v2
+#     - https://appdsv1.llguangli25n.com/api-v2
 #   respect-rules: true
 #   use-hosts: true
 #   use-system-hosts: true
