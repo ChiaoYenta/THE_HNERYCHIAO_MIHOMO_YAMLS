@@ -1,0 +1,12 @@
+28ab270cfb955dcb642a93a0b5f32e2ddc9eeefa33d8eba972bb60eeed9beb63  ./publish/sing-box/sing-box-sagernet-stable-linux-arm64.upx
+4145df99726682489cb34dd8b3bb5faa5b62414fd2a50c89a1d6d824774ed4b4  ./publish/sing-box/sing-box-sagernet-stable-linux-armv5.upx
+4846790473491fc448690cd17ec3a86517a6ac4052d964c6eb1e8cc8d460eace  ./publish/sing-box/sing-box-sagernet-stable-linux-armv7.upx
+71689e9ad6ba16fb7dd043e91800f9af96fc1689a7adc6306ba84d0a93e08f2b  ./publish/sing-box/sing-box-sagernet-stable-linux-mips-softfloat.upx
+7ce218aaffb818fd64de4a14586b68e50d51c53ecb9320854a7c90b42a72bf4c  ./publish/sing-box/sing-box-sagernet-stable-linux-amd64-v1.upx
+a60401b29b202b77e2e20437a26d8858f66c241699fe76fb2b5aaf07ca7e3f13  ./publish/sing-box/sing-box-sagernet-stable-windows-arm64.exe
+bbf2b5edf5983506a2ccc08e8dbebd7450f815e198bfdfa866badba18f1dfef5  ./publish/sing-box/sing-box-sagernet-stable-windows-amd64-v1.exe
+bffa9493fa916f65fed1ea4f1894cdd94b5806edf141c3252493258b17560f40  ./publish/sing-box/sing-box-sagernet-stable-linux-amd64-v3.upx
+c19a591ea727f82909f0eec7293bc63e828990b21cb150c33781971e69be44a1  ./publish/sing-box/sing-box-sagernet-stable-linux-mipsle-softfloat.upx
+c70f8336711ec95461c603ec95757412fb36f3910655365f895fb50394562754  ./publish/sing-box/sing-box-sagernet-stable-linux-armv6.upx
+f28da1809f2b45c1aa49439d7f654621278257ba289cf58768c2a27f2d6cc6ee  ./publish/sing-box/sing-box-sagernet-stable-linux-mipsle-hardfloat.upx
+f96296d446191c9fa5ecee54104773ec6bdb2b0395966980bad64c8053bdc667  ./publish/sing-box/sing-box-sagernet-stable-windows-amd64-v3.exe
