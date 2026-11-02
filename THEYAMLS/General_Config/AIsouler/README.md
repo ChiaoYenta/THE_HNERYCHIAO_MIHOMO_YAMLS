@@ -8,21 +8,21 @@
 
 | 特性 | `mihomoConfigLite.yaml` | `mihomoconfig.yaml` |
 | :--- | :--- | :--- |
-| **大小** | 17.8 KB | 27.7 KB |
+| **大小** | 18.7 KB | 28.5 KB |
 | **混合端口** | 7890 | 7890 |
 | **面板地址** | 127.0.0.1:9090 | 127.0.0.1:9090 |
 | **运行模式** | rule | rule |
 | **TUN** | ✅ | ✅ |
-| **策略组** | **26** | **44** |
-| **规则数** | **22** | **58** |
+| **策略组** | **28** | **46** |
+| **规则数** | **26** | **62** |
 
 ## 📄 配置详情
 
 #### 📝 mihomoConfigLite.yaml
-- **路径**: `mihomoConfigLite.yaml` | **大小**: 17.8 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoConfigLite.yaml)
+- **路径**: `mihomoConfigLite.yaml` | **大小**: 18.7 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoConfigLite.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
-<summary>🔍 策略组 (26个)</summary>
+<summary>🔍 策略组 (28个)</summary>
 
 | 名称 | 类型 |
 | :--- | :--- |
@@ -46,14 +46,14 @@
 | ♻️ 新加坡-自动选择 | `url-test` |
 | 👆 台湾 | `select` |
 | ♻️ 台湾-自动选择 | `url-test` |
-| ... | 还有 6 个 |
+| ... | 还有 8 个 |
 </details>
 
 #### 📝 mihomoconfig.yaml
-- **路径**: `mihomoconfig.yaml` | **大小**: 27.7 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoconfig.yaml)
+- **路径**: `mihomoconfig.yaml` | **大小**: 28.5 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoconfig.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
-<summary>🔍 策略组 (44个)</summary>
+<summary>🔍 策略组 (46个)</summary>
 
 | 名称 | 类型 |
 | :--- | :--- |
@@ -77,5 +77,5 @@
 | 👆 Netflix | `select` |
 | 👆 Emby | `select` |
 | 👆 PikPak | `select` |
-| ... | 还有 24 个 |
+| ... | 还有 26 个 |
 </details>
