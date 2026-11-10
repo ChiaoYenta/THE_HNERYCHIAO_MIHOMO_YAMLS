@@ -8,13 +8,13 @@
 
 | 特性 | `mihomoConfigLite.yaml` | `mihomoconfig.yaml` |
 | :--- | :--- | :--- |
-| **大小** | 18.5 KB | 28.3 KB |
+| **大小** | 18.5 KB | 27.9 KB |
 | **混合端口** | 7890 | 7890 |
 | **面板地址** | 127.0.0.1:9090 | 127.0.0.1:9090 |
 | **运行模式** | rule | rule |
 | **TUN** | ✅ | ✅ |
 | **策略组** | **28** | **46** |
-| **规则数** | **25** | **61** |
+| **规则数** | **24** | **52** |
 
 ## 📄 配置详情
 
@@ -50,7 +50,7 @@
 </details>
 
 #### 📝 mihomoconfig.yaml
-- **路径**: `mihomoconfig.yaml` | **大小**: 28.3 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoconfig.yaml)
+- **路径**: `mihomoconfig.yaml` | **大小**: 27.9 KB | [查看源码](https://github.com/ChiaoYenta/THE_HNERYCHIAO_MIHOMO_YAMLS/blob/main/THEYAMLS/General_Config/AIsouler/mihomoconfig.yaml)
 - **模式**: rule | **TUN**: ✅ | **IPv6**: ✅
 <details>
 <summary>🔍 策略组 (46个)</summary>
