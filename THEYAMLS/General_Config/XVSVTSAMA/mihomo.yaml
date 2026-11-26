@@ -6,7 +6,7 @@
 #   https://github.com/XVSVTsama/XVSVT-Clash-Config
 #   作者：
 #   https://github.com/XVSVTsama
-#   版本：上一提交 bcddb43bb3a57b770b1ca44944dfe3cba6b3edde，本提交时间 2026-11-20 22:17:48 +0800
+#   版本：上一提交 e4530a88dfb1bab7760a40a4e41e07093fc10602，本提交时间 2026-11-22 19:33:22 +0800
 
 .templates:
   # proxy-groups 共享片段
@@ -34,12 +34,29 @@ find-process-mode: strict
 mixed-port: 7254
 port: 7249
 socks-port: 7346
+allow-lan: true
+bind-address: "*"
+lan-allowed-ips:
+  - 0.0.0.0/0
+  - ::/0
+authentication:
+  - "xvsvt:132e6671f6c386a7"
+skip-auth-prefixes:
+  - 127.0.0.1/8
+  - ::1/128
 etag-support: true
 global-ua: clash.meta
 ipv6: true
 log-level: info
-external-controller: 127.0.0.1:9090
+external-controller: 0.0.0.0:9090
+external-controller-cors:
+  allow-origins:
+    - '*'
+  allow-private-network: true
+secret: "318a2fbc9f4836b114c0ada7e6d5f36e"
 external-ui: dashboard
+external-ui-name: metacubexd
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 unified-delay: true
 tcp-concurrent: true
 keep-alive-idle: 600
@@ -50,6 +67,10 @@ profile:
 tun:                                                    
   enable: true 
   device: XVSVT
+  mtu: 1500
+  endpoint-independent-nat: false
+  inet6-address:
+    - "fdfe:dcba:9876::1/126"
   auto-detect-interface: true
   auto-route: true 
   auto-redirect: true
@@ -60,54 +81,25 @@ tun:
     - "any:53"  
     - "udp://any:53"
     - "tcp://any:53"                                                             
+  # 只接管公网单播：私网、保留、组播与 CGNAT 段由 route-exclude-address 排除，
+  # 不进 tun（否则局域网访问、热点下联、运营商内网会被一并路由进来）
   route-address:
-  - "198.51.100.0/30"
-  - "1.0.0.0/8"
-  - "2.0.0.0/7"
-  - "4.0.0.0/6"
-  - "8.0.0.0/7"
-  - "11.0.0.0/8"
-  - "12.0.0.0/6"
-  - "16.0.0.0/4"
-  - "32.0.0.0/3"
-  - "64.0.0.0/3"
-  - "96.0.0.0/4"
-  - "112.0.0.0/5"
-  - "120.0.0.0/6"
-  - "124.0.0.0/7"
-  - "126.0.0.0/8"
-  - "128.0.0.0/3"
-  - "160.0.0.0/5"
-  - "168.0.0.0/8"
-  - "169.0.0.0/9"
-  - "169.128.0.0/10"
-  - "169.192.0.0/11"
-  - "169.224.0.0/12"
-  - "169.240.0.0/13"
-  - "169.248.0.0/14"
-  - "169.252.0.0/15"
-  - "169.255.0.0/16"
-  - "170.0.0.0/7"
-  - "172.0.0.0/12"
-  - "172.32.0.0/11"
-  - "172.64.0.0/10"
-  - "172.128.0.0/9"
-  - "173.0.0.0/8"
-  - "174.0.0.0/7"
-  - "176.0.0.0/4"
-  - "192.0.0.0/9"
-  - "192.128.0.0/11"
-  - "192.160.0.0/13"
-  - "192.169.0.0/16"
-  - "192.170.0.0/15"
-  - "192.172.0.0/14"
-  - "192.176.0.0/12"
-  - "192.192.0.0/10"
-  - "193.0.0.0/8"
-  - "194.0.0.0/7"
-  - "196.0.0.0/6"
-  - "200.0.0.0/5"
-  - "208.0.0.0/4"
+  - "0.0.0.0/1"
+  - "128.0.0.0/1"
+  # IPv6 只接管公网单播与 fake-ip6 所在网段（fdfe:dcba:9876::/64），
+  # 链路本地、组播与 ULA 内网留给系统；fake-ip-range6 改动时这里要同步
+  - "2000::/3"
+  - "fdfe:dcba:9876::/64"
+  route-exclude-address:
+  - "0.0.0.0/8"
+  - "10.0.0.0/8"
+  - "100.64.0.0/10"
+  - "127.0.0.0/8"
+  - "169.254.0.0/16"
+  - "172.16.0.0/12"
+  - "192.168.0.0/16"
+  - "224.0.0.0/4"
+  - "240.0.0.0/4"
   
 ntp:
   enable: true              
